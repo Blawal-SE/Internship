@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Page Title</title>
+    <link rel="stylesheet" type="text/css" href="Css/styles.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">
+
+
+</head>
+
+<body>
+    <h1>
+        <b>All Student Records</b>
+    </h1>
+    <button class="addRecord">Add New Student</button>
+    <table id="student">
+        <thead>
+            <th>Name</th>
+            <th>Father Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Date of Birth</th>
+            <th>Password</th>
+            <th>Actions</th>
+        </thead>
+        <tbody id="stdList">
+
+
+        </tbody>
+    </table>
+    <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script> 
+    <script src="Script/StudentManagerWithJquery.js"></script>
+    <script>
+      $(document).ready(function(){
+        studentList();
+        
+    </script>
+</body>
+
+</html>
