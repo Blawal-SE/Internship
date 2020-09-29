@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Add Student</title>
+    <link rel="stylesheet" type="text/css" href="css/StudentForm.css">
+
+</head>
+
+<body>
+    <h1>
+        Edit to Student
+    </h1>
+
+    <div id="parent" name="myForm">
+        <input id="id" style="display: none;">
+        <div>
+            <label style="margin-right:50px;">Name</label>
+            <input id="Name" type="text" name="Name" />
+            <label id="Namelb"></label>
+        </div>
+        <br>
+        <div>
+            <label style="margin-right: 5px;">Father Name</label>
+
+            <input id="FName" type="text" name="FName" />
+            <label id="FNamelb"></label>
+
+        </div>
+        <br>
+
+        <div class="emaillb">
+            <label style="margin-right:50px;">Email</label>
+
+            <input id="email" type="text" name="email" />
+            <label id="emaillb"></label>
+
+
+        </div>
+        <br>
+        <div class="phonelb">
+            <label style="margin-right:50px;">Phone</label>
+            <input id="phone" type="text" name="phone" />
+            <label id="phonelb"></label>
+
+
+        </div>
+        <br>
+        <div>
+            <label style="margin-right:5px;">Date of Birth</label>
+
+            <input id="DOB" type="date" value="2014-02-09" name="DOB" />
+        </div>
+        <br>
+        <div class="Passwordlb">
+            <label style="margin-right:30px;">Password</label>
+
+            <input id="Password" type="text" />
+            <label id="Passwordlb"></label>
+
+
+        </div>
+        <br>
+        <div class="ConfrimPasswordlb">
+            <label style="margin-right:0px;">Confrim Password</label>
+
+            <input id="ConfrimPassword" type="text" />
+            <label id="ConfrimPasswordlb"></label>
+
+
+        </div>
+        <br>
+
+        <div>
+            <a id="btnsubmit" href="StudentList.html" type="button" onclick="return editStudentPost()">Edit</a>
+        </div>
+    </div>
+
+    </div>
+
+    <script src="Script/Validations.js"></script>
+    <script src="Script/StudentManager.js"></script>
+    <script>
+        editStudentGet();
+    </script>
+</body>
+
+</html>
