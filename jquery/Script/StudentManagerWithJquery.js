@@ -253,7 +253,7 @@ function addNewStudentRow() {
     });
 
 }
-
+//sdfsdfssdddddddddd
 
 function validateStudent(student,parent) {
   
