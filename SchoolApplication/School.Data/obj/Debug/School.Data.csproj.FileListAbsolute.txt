@@ -1,0 +1,13 @@
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\School.Data\bin\Debug\School.Data.dll.config
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\School.Data\bin\Debug\School.Data.dll
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\School.Data\bin\Debug\School.Data.pdb
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\School.Data\bin\Debug\EntityFramework.dll
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\School.Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\School.Data\bin\Debug\EntityFramework.xml
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\School.Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\School.Data\obj\Debug\School.Data.csprojAssemblyReference.cache
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\School.Data\obj\Debug\School.Data.csproj.CopyComplete
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\School.Data\obj\Debug\School.Data.dll
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\School.Data\obj\Debug\School.Data.pdb
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\School.Data\obj\Debug\School.Data.Migrations.studentTableIsCreated.resources
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\School.Data\obj\Debug\School.Data.csproj.GenerateResource.cache
