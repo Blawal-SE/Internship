@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace School.Data.Models
 {
-    class SchoolContext : DbContext
+   public class SchoolContext : DbContext
     {
         public SchoolContext() : base("name=School")
         {
 
         }
-        public virtual DbSet<Student> Students { get; set; }
+        public  DbSet<Student> Students { get; set; }
     }
 }

@@ -55,6 +55,14 @@
     <Compile Include="Migrations\202009300557160_studentTableIsCreated.designer.cs">
       <DependentUpon>202009300557160_studentTableIsCreated.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202009301017169_dobChangedToString.cs" />
+    <Compile Include="Migrations\202009301017169_dobChangedToString.designer.cs">
+      <DependentUpon>202009301017169_dobChangedToString.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202010011041495_StudentTableemailcolumnaddedb.cs" />
+    <Compile Include="Migrations\202010011041495_StudentTableemailcolumnaddedb.designer.cs">
+      <DependentUpon>202010011041495_StudentTableemailcolumnaddedb.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\SchoolContext.cs" />
     <Compile Include="Models\Student.cs" />
@@ -67,6 +75,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202009300557160_studentTableIsCreated.resx">
       <DependentUpon>202009300557160_studentTableIsCreated.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009301017169_dobChangedToString.resx">
+      <DependentUpon>202009301017169_dobChangedToString.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010011041495_StudentTableemailcolumnaddedb.resx">
+      <DependentUpon>202010011041495_StudentTableemailcolumnaddedb.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -12,7 +12,8 @@ namespace School.Data.Models
         public string Name { get; set; }
         public string FName { get; set; }
         public string Phone { get; set; }
-        public DateTime Dob { get; set; }
+        public string Dob { get; set; }
+        public string  Email { get; set; }
         public string Password { get; set; }
         public string ConfirmPassword { get; set; }
 

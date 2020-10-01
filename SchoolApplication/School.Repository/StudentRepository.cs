@@ -4,10 +4,34 @@ using System.Linq;
 using System.Web;
 using System.Data.Entity;
 using School.Data.Models;
+
+
 namespace school.WebApi
 {
-    public class StudentRepository
+    public sealed class StudentRepository
     {
+        #region  Singleleton pattern
+
+        private static readonly StudentRepository instance = new StudentRepository();
+        // Explicit static constructor to tell C# compiler  
+        // not to mark type as beforefieldinit  
+        static StudentRepository()
+        {
+        }
+        private StudentRepository()
+        {
+        }
+        public static StudentRepository Instance
+        {
+            get
+            {
+                return instance;
+            }
+        }
+
+      
+        #endregion
+        #region student Repository
         public List<Student> GetAllStudent()
         {
             try
@@ -51,7 +75,7 @@ namespace school.WebApi
             {
                 using (var context = new SchoolContext())
                 {
-                    context.Entry(s).State = EntityState.Added;
+                    context.Entry(s).State = EntityState.Modified;
                     context.SaveChanges();
                     return true;
                 }
@@ -75,23 +99,22 @@ namespace school.WebApi
                     return true;
                 }
             }
-            catch (Exception e)
+            catch (Exception)
             {
 
-                throw e;
                 return false;
             }
 
 
         }
-        public string FindStudent(int id)
+        public Student FindStudent(int id)
         {
             try
             {
                 using (var context = new SchoolContext())
                 {
-                    var students = context.Students.ToList();
-                    return students.ToString();
+                    var student = context.Students.Where(x=>x.Id==id).FirstOrDefault();
+                    return student;
                 }
             }
             catch (Exception e)
@@ -102,7 +125,7 @@ namespace school.WebApi
 
 
         }
-
+        #endregion 
 
     }
 }

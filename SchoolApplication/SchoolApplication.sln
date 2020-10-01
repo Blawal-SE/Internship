@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29613.14
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "school.WebApi", "school.WebApi\school.WebApi.csproj", "{AB4DF1E2-82A4-4F31-9255-7DB31FC05E72}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "School.WebApi", "school.WebApi\School.WebApi.csproj", "{AB4DF1E2-82A4-4F31-9255-7DB31FC05E72}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "School.Repository", "School.Repository\School.Repository.csproj", "{ACF915D5-386E-4B5D-9A62-17096685AD91}"
 EndProject
