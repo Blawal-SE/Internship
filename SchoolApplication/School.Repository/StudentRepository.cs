@@ -1,19 +1,21 @@
-﻿using System;
+﻿using School.Data;
+using School.Models;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Data.Entity;
-using School.Data.Models;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-
-namespace school.WebApi
+namespace School.Repository
 {
-    public sealed class StudentRepository
+
+    public class StudentRepository : BaseRepository<Student>
     {
         #region  Singleleton pattern
 
         private static readonly StudentRepository instance = new StudentRepository();
-        // Explicit static constructor to tell C# compiler  
+        // explicit static constructor to tell c# compiler  
         // not to mark type as beforefieldinit  
         static StudentRepository()
         {
@@ -29,91 +31,72 @@ namespace school.WebApi
             }
         }
 
-      
+
         #endregion
         #region student Repository
-        public List<Student> GetAllStudent()
-        {
-            try
+        public string AddStudent(Student obj,String courses)
+        {// BaseRepository<Student> b = new BaseRepository<Student>();
+          //  Add(obj);
+            if (Add(obj))
             {
-                using (var context = new SchoolContext())
+                try
                 {
-                    var students = context.Students.ToList();
-                    return students;
-                }
-            }
-            catch (Exception e)
-            {
+                    using (SchoolContext db = new SchoolContext())
+                    {
+                        StudentCourse stdCourse = new StudentCourse();
+                        var Std = db.Students.OrderByDescending(x => x.Id).FirstOrDefault();
+                        stdCourse.StudentId = Std.Id;
+                        var courseList = courses.Split(',').ToList();
+                        foreach (var course in courseList)
+                        {
+                            stdCourse.CourseId = Convert.ToInt32(course);
+                            db.StudentCourses.Add(stdCourse);
+                            db.SaveChanges();
+                        }
 
-                throw e;
-            }
-           
-           
-        }
-        public bool CreateStudent(Student s)
-        {
-            try
-            {
-                using (var context = new SchoolContext())
+                    }
+                }
+                catch (Exception e)
                 {
-                    var students = context.Students.Add(s);
-                    context.SaveChanges();
-                    return true;
+
+                    return "failed to Save Courses error message is" + e;
                 }
+
+
+                return "successfully added Student and Courses";
             }
-            catch (Exception e)
+            else
             {
-
-                return false;
+                return " Unable to add Student";
             }
-
-
-        }
-        public bool EditStudent(Student s)
-        {
-            try
-            {
-                using (var context = new SchoolContext())
-                {
-                    context.Entry(s).State = EntityState.Modified;
-                    context.SaveChanges();
-                    return true;
-                }
-            }
-            catch (Exception e)
-            {
-                return false;
-                
-            }
-
 
         }
-        public bool DeleteStudent(int id)
-        {
-            try
-            {
-                using (var context = new SchoolContext())
-                {
-                    context.Students.Remove(context.Students.Where(x => x.Id == id).FirstOrDefault());
-                    context.SaveChanges();
-                    return true;
-                }
-            }
-            catch (Exception)
-            {
+        //public bool DeleteStudent(int id)
+        //{
+        //    try
+        //    {
+        //        using (var context = new SchoolContext())
+        //        {
+        //            context.Students.Remove(context.Students.Where(x => x.Id == id).FirstOrDefault());
+        //            context.SaveChanges();
+        //            return true;
+        //        }
+        //    }
+        //    catch (Exception)
+        //    {
 
-                return false;
-            }
+        //        return false;
+        //    }
 
 
-        }
+        //}
         public Student FindStudent(int id)
         {
             try
             {
                 using (var context = new SchoolContext())
                 {
-                    var student = context.Students.Where(x=>x.Id==id).FirstOrDefault();
+                    var student = context.Students.Where(x => x.Id == id).FirstOrDefault();
                     return student;
                 }
             }
@@ -125,7 +108,27 @@ namespace school.WebApi
 
 
         }
-        #endregion 
+        //public void SaveStudent(Student obj)
+        //{
+        //    try
+        //    {
+        //        using (var context = new SchoolContext())
+        //        {
+        //            context.Students.Add(obj);
+        //            context.SaveChanges();
+
+        //        }
+        //    }
+        //    catch (Exception)
+        //    {
+
+
+        //    }
+
+
+        //}
+
+        #endregion
 
     }
 }

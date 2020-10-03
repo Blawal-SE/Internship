@@ -1,5 +1,8 @@
 ﻿using Newtonsoft.Json;
-using School.Data.Models;
+using school.WebApi.View;
+using School.Data;
+using School.Models;
+using School.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,7 +19,7 @@ namespace school.WebApi.Controller
      [HttpGet]
         public IHttpActionResult Get()
         { 
-            var students = StudentRepository.Instance.GetAllStudent();
+            var students = StudentRepository.Instance.GetAll();
             return Ok(students);
         }
         [HttpGet]
@@ -26,10 +29,11 @@ namespace school.WebApi.Controller
             return Ok(StudentRepository.Instance.FindStudent(id));
         }
         [HttpPost]
-        public IHttpActionResult Post([FromBody]Student student)
+        public IHttpActionResult Post(string student)
         {
-          
-            StudentRepository.Instance.CreateStudent(student);
+            StudentCourseViewModel model = new StudentCourseViewModel();
+                model = JsonConvert.DeserializeObject<StudentCourseViewModel>(student);
+           var message= StudentRepository.Instance.AddStudent(model.student,model.courses);
            
             return Ok(true); 
         }
@@ -37,15 +41,15 @@ namespace school.WebApi.Controller
         public IHttpActionResult Put([FromBody]Student student)
         {
 
-            StudentRepository.Instance.EditStudent(student);
+            StudentRepository.Instance.Update(student);
 
             return Ok(true);
         }
         [HttpDelete]
-        public IHttpActionResult Delete([FromBody]int id)
+        public IHttpActionResult Delete(int id)
         {
 
-            StudentRepository.Instance.DeleteStudent(id);
+            StudentRepository.Instance.Delete(id);
 
             return Ok(true);
         }

@@ -1,10 +1,8 @@
 var arr=[];
 var bool=true;
 
-
-function ajaxCall(url,type,data){
-
-
+function serverCall(url,type,data,successp,errorp){
+   
     $.ajax({
         type: type,
         async: false,  
@@ -13,104 +11,145 @@ function ajaxCall(url,type,data){
         //contentType: 'application/json; charset=UTF-8',  //send type of data to sever
        // traditional: true,
         
-        success: function (response, statusText, xhr) {
-            if(type.toLowerCase()=='get'){
-            arr=JSON.parse(JSON.stringify(response));
-        }
-           
-
-        },
-        error: function (XMLHttpRequest, textStatus, errorThrown) {                       
-            if(type.toLowerCase()!='get'){  bool=false;}
-
-        }
+        success:successp,
+      
+        error:errorp
      });
-     if(type.toLowerCase()=='get'){return arr;}
+   
+
+     
+}
+function serverCallStudent(url,type,data,successp,errorp){
+   
+    $.ajax({
+        type: type,
+        async: false,  
+        url: url,
+        data:{
+            student:data
+        },
+        //contentType: 'application/json; charset=UTF-8',  //send type of data to sever
+       // traditional: true,
         
-    if(type.toLowerCase()=='put'){ return bool;}
-    if(type.toLowerCase()=='post'){ return bool;}
-    if(type.toLowerCase()=='delete'){ return bool;}
+        success:successp,
+      
+        error:errorp
+     });
+   
 
-    
+     
+}
+// function ajaxCall(url,type,data){
 
-// if(type.toLowerCase()=='post')
-// {
+
+
 //     $.ajax({
 //         type: type,
-//         async: false,  
+//        async:false, 
 //         url: url,
+//         data:data,
 //         //contentType: 'application/json; charset=UTF-8',  //send type of data to sever
 //        // traditional: true,
-//         data:data,//{
-//         //     Id:data.Id,
-//         //     Name: data.Name,
-//         //     Fname: data.FName,
-//         //     Email: data.Email,
-//         //     Phone: data.Phone,
-//         //     Dob: data.Dob,
-//         //     Password: data.Password,
-//         //     ConfirmPassword: data.ConfirmPassword
-
-//         // },
+        
 //         success: function (response, statusText, xhr) {
-          
-
-//         },
-//         error: function (XMLHttpRequest, textStatus, errorThrown) {                       
-//             bool=false;
-
+//             if(type.toLowerCase()=='get'){
+//             arr=JSON.parse(JSON.stringify(response));
 //         }
-//      }); 
-//      return bool;
-// }
-// if(type.toLowerCase()=='put')
-// {
-    
-//     $.ajax({
-//         type: type,
-//         async: false,  
-//         url: url,
-//         data:{
-//             Id:data.Id,
-//             Name: data.Name,
-//             Fname: data.FName,
-//             Email: data.Email,
-//             Phone: data.Phone,
-//             Dob: data.Dob,
-//             Password: data.Password,
-//             ConfirmPassword: data.ConfirmPassword
-
-//         },
-//         success: function (response, statusText, xhr) {
-          
+           
 
 //         },
 //         error: function (XMLHttpRequest, textStatus, errorThrown) {                       
-//             bool=false;
+//             if(type.toLowerCase()!='get'){  bool=false;}
 
 //         }
 //      });
-//      return bool;
-// }
-// if(type.toLowerCase()=='delete')
-// {
-//      $.ajax({
-//     type: type,
-//     async: false,  
-//     url: url,
-//     //contentType: 'application/json; charset=UTF-8',  //send type of data to sever
-//    // traditional: true,
-   
-//     success: function (response, statusText, xhr) {
-//     },
-//     error: function (XMLHttpRequest, textStatus, errorThrown) {                       
-//         bool=false;
+//      debugger;
+//      if(type.toLowerCase()=='get'){return arr;}
+        
+//     if(type.toLowerCase()=='put'){ return bool;}
+//     if(type.toLowerCase()=='post'){ return bool;}
+//     if(type.toLowerCase()=='delete'){ return bool;}
 
-//     }
-//  });
-//  return bool;
     
-// }
+
+// // if(type.toLowerCase()=='post')
+// // {
+// //     $.ajax({
+// //         type: type,
+// //         async: false,  
+// //         url: url,
+// //         //contentType: 'application/json; charset=UTF-8',  //send type of data to sever
+// //        // traditional: true,
+// //         data:data,//{
+// //         //     Id:data.Id,
+// //         //     Name: data.Name,
+// //         //     Fname: data.FName,
+// //         //     Email: data.Email,
+// //         //     Phone: data.Phone,
+// //         //     Dob: data.Dob,
+// //         //     Password: data.Password,
+// //         //     ConfirmPassword: data.ConfirmPassword
+
+// //         // },
+// //         success: function (response, statusText, xhr) {
+          
+
+// //         },
+// //         error: function (XMLHttpRequest, textStatus, errorThrown) {                       
+// //             bool=false;
+
+// //         }
+// //      }); 
+// //      return bool;
+// // }
+// // if(type.toLowerCase()=='put')
+// // {
+    
+// //     $.ajax({
+// //         type: type,
+// //         async: false,  
+// //         url: url,
+// //         data:{
+// //             Id:data.Id,
+// //             Name: data.Name,
+// //             Fname: data.FName,
+// //             Email: data.Email,
+// //             Phone: data.Phone,
+// //             Dob: data.Dob,
+// //             Password: data.Password,
+// //             ConfirmPassword: data.ConfirmPassword
+
+// //         },
+// //         success: function (response, statusText, xhr) {
+          
+
+// //         },
+// //         error: function (XMLHttpRequest, textStatus, errorThrown) {                       
+// //             bool=false;
+
+// //         }
+// //      });
+// //      return bool;
+// // }
+// // if(type.toLowerCase()=='delete')
+// // {
+// //      $.ajax({
+// //     type: type,
+// //     async: false,  
+// //     url: url,
+// //     //contentType: 'application/json; charset=UTF-8',  //send type of data to sever
+// //    // traditional: true,
+   
+// //     success: function (response, statusText, xhr) {
+// //     },
+// //     error: function (XMLHttpRequest, textStatus, errorThrown) {                       
+// //         bool=false;
+
+// //     }
+// //  });
+// //  return bool;
+    
+// // }
 
   
-}
+// }
