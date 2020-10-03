@@ -117,10 +117,10 @@ function addStudentDynamic(student) {
 
 
 function studentList() {
-  
+    debugger;
   // var stdList =GetStudentListApi;//JSON.parse(localStorage.getItem("student"));
+   studentArray= ajaxCall(baseUrl,"get");
   
-   debugger;
    // ajax start to get all student and put records in Table
    $.ajax({
     Method: 'GET',
@@ -478,3 +478,96 @@ function validateStudentForm(name, fname, email, phone, password, confirmPasswor
     var editStudent = student[foundIndex];
     return editStudent;
 }
+
+
+
+
+
+function StudentList() {
+    debugger;
+  // var stdList =GetStudentListApi;//JSON.parse(localStorage.getItem("student"));
+   studentArray= ajaxCall(baseUrl,"get");
+  
+   // ajax start to get all student and put records in Table
+  
+    var appendRow = "";
+    studentArray.forEach(function(value, index) {
+       
+        appendRow += "<tr><td>" + value.Name + "</td>" + "<td>" + value.FName + "</td>" + "<td>" + value.Email + "</td>" + "<td>" + value.Phone + "</td>" + "<td>" + value.Dob + "</td>" + "<td>" + value.Password + "</td>";
+        appendRow += "<td><button class='editBtn'  data-id=" + value.Id + ">Edit</button>";
+        appendRow += "<button class='deleteBtn'  data-id=" + value.Id + ">Delete</a></td></tr>";
+        //tBody.innerHTML += appendRow;
+
+    });
+    $('#stdList').html('').append(appendRow);
+    
+        $('.deleteBtn').click(function() {
+        debugger;
+         var id = parseInt($(this).attr('data-id'));
+         var url=baseUrl + '?id=' + id;
+        if(ajaxCall(url,"delete")){StudentList();}
+ 
+        // deleteStudent(id);
+       });
+     $('.editBtn').click(function() {
+        
+         var id = parseInt($(this).attr('data-id'));
+         var url=baseUrl+'?id='+id;
+         var parent = $(this).closest('tr');
+            
+         var student=ajaxCall(url,"get");
+         var row = "<td>  <input id='Name' type='text'  value='"+student.Name+"'/></td>";
+         row += "<td>  <input id='FName' type='text'  value='"+student.FName+"'/></td>";
+         row += "<td>  <input id='email' type='text'  value='"+student.Email+"'/></td>";
+         row += "<td>  <input id='phone' type='text'  value='"+student.Phone+"'/></td>";
+         row += "<td>  <input id='DOB' type='date' value='"+student.Dob+"'/></td>";
+         row += "<td>  <input id='Password' type='password' value='"+student.Password+"'/></td>";
+ 
+         row += "<td><button id='updateBtn' type='button'>Update</button><button id='updateCancelBtn' type='button'>Cancel</button>  </td>";
+         parent.html('').append(row);
+        
+         var row2 = "<tr><td> <label id='Namelb'/></td>";
+         row2 += "<td><td>";
+         row2 += "<td><label id='emaillb'></label></td>";
+         row2 += "<td></td>";
+         row2 += "<td></td>";
+         row2 += "<td><label id='Passwordlb'></label></td>";
+         row2 += "<td></td>";
+         $(row2).insertAfter(parent);
+         
+         $('#updateBtn').click(function(){
+         
+            var parent=$(this).closest('tr');
+           var student= {};//getStudent(id);
+           student.Id=id;
+           student.Name=parent.find('#Name').val();
+           student.FName=parent.find('#FName').val();
+           student.Email=parent.find('#email').val();
+           student.Phone=parent.find('#phone').val();
+           student.Dob=parent.find('#DOB').val();
+           student.Password=parent.find('#Password').val();
+           student.ConfirmPassword=parent.find('#Password').val();
+            if(validateStudent(student,parent.next()))
+           { debugger;
+                //var url='https://localhost:44330/api/Student';
+            if(ajaxCall(baseUrl,"put",student)){StudentList();}else{alert("ajax failed to post data");}
+                 
+             }
+           });
+           $('#updateCancelBtn').click(function(){
+            StudentList();
+         });
+ 
+     });
+ 
+
+   
+   
+   //ajax end 
+
+
+    // var tBody = $('#stdList').val();//document.getElementById("stdList");
+  
+  
+
+}           
