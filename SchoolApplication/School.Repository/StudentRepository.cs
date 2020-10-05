@@ -1,51 +1,61 @@
 ﻿using School.Data;
 using School.Models;
+using School.Repository.View;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 namespace School.Repository
 {
 
     public class StudentRepository : BaseRepository<Student>
     {
-        #region  Singleleton pattern
-
-        private static readonly StudentRepository instance = new StudentRepository();
-        // explicit static constructor to tell c# compiler  
-        // not to mark type as beforefieldinit  
-        static StudentRepository()
-        {
-        }
-        private StudentRepository()
-        {
-        }
-        public static StudentRepository Instance
-        {
-            get
-            {
-                return instance;
-            }
-        }
-
-
-        #endregion
         #region student Repository
-        public string AddStudent(Student obj,String courses)
+        public List<StudentDtoPost> GetStudents()
+        {// BaseRepository<Student> b = new BaseRepository<Student>();
+         //  Add(obj);
+            List<StudentDtoPost> DtoList = new List<StudentDtoPost>();
+            try
+            {
+                using (SchoolContext db = new SchoolContext())
+                {
+                    var StdList=db.Students.ToList();
+                    foreach (var student in StdList)
+                    {
+                        StudentDtoPost dto = new StudentDtoPost();
+                        dto.student = student;
+                        dto.CoursesCount = db.StudentCourses.Where(x => x.StudentId == student.Id).Count();
+
+                        DtoList.Add(dto);
+                        
+                    }
+                  
+
+                }
+            }
+            catch (Exception e)
+            {
+
+              
+            }
+
+            return DtoList;
+
+        }
+        public bool AddStudent(Student obj,String courses)
         {// BaseRepository<Student> b = new BaseRepository<Student>();
           //  Add(obj);
-            if (Add(obj))
-            {
+            
                 try
                 {
                     using (SchoolContext db = new SchoolContext())
                     {
                         StudentCourse stdCourse = new StudentCourse();
-                        var Std = db.Students.OrderByDescending(x => x.Id).FirstOrDefault();
-                        stdCourse.StudentId = Std.Id;
+                    // var Std = db.Students.OrderByDescending(x => x.Id).FirstOrDefault();
+                        db.Students.Add(obj);
+                        stdCourse.StudentId = obj.Id;
                         var courseList = courses.Split(',').ToList();
                         foreach (var course in courseList)
                         {
@@ -53,22 +63,16 @@ namespace School.Repository
                             db.StudentCourses.Add(stdCourse);
                             db.SaveChanges();
                         }
-
+                   
                     }
                 }
                 catch (Exception e)
                 {
 
-                    return "failed to Save Courses error message is" + e;
+                    return false;
                 }
 
-
-                return "successfully added Student and Courses";
-            }
-            else
-            {
-                return " Unable to add Student";
-            }
+            return true;
 
         }
         //public bool DeleteStudent(int id)

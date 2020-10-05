@@ -68,7 +68,7 @@ namespace School.Repository
             // repo.Update(a);
             // _dbset.AddOrUpdate(obj);
             //    _context.Entry(obj).State = EntityState.Added;
-            _context.Set<T>().AddOrUpdate(obj);
+           // _context.Set<T>().AddOrUpdate(obj);
             //var existingAttach = _dbset.Attach(obj);
             _context.Entry(obj).State = EntityState.Modified;
             //  _context.Entry(obj).CurrentValues.SetValues(obj);

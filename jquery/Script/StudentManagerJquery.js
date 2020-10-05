@@ -1,5 +1,5 @@
 var studentArray = [];
-var baseUrl = 'https://localhost:44330/api/Student';
+var baseUrl = 'https://localhost:44330/api/';
 
 //#region Generic Ajax  crud operation On student Table 
 
@@ -7,26 +7,31 @@ function StudentListGeneric() {
     debugger;
     // var stdList =GetStudentListApi;//JSON.parse(localStorage.getItem("student"));
     // studentArray=
-    serverCall(baseUrl, "get", null, successg);
+    serverCall(baseUrl+"Student", "get", null, successg);
 
     // ajax start to get all student and put records in Table
     function successg(result) {
         var appendRow = "";
         result.forEach(function (value, index) {
 
-            appendRow += "<tr><td>" + value.Name + "</td>" + "<td>" + value.FName + "</td>" + "<td>" + value.Email + "</td>" + "<td>" + value.Phone + "</td>" + "<td>" + value.Dob + "</td>" + "<td>" + value.Password + "</td>";
-            appendRow += "<td><button class='editBtn'  data-id=" + value.Id + ">Edit</button>";
-            appendRow += "<button class='deleteBtn'  data-id=" + value.Id + ">Delete</a></td></tr>";
+            appendRow += "<tr><td>" + value.student.Name + "</td>" + "<td>" + value.student.FName + "</td>" + "<td>" + value.student.Email + "</td>" + "<td>" + value.student.Phone + "</td>" + "<td>" + value.student.Dob + "</td>" + "<td>" + value.student.Password + "</td>"+"<td>"+value.CoursesCount+"</td>";
+            appendRow += "<td><button class='editBtn btn btn-primary'  data-id=" + value.Id + ">Edit</button>";
+            appendRow += "<button style='margin-left:5px;' class='editNewWindowBtn btn btn-secondary'  data-id=" + value.Id + ">Edit With Courses</button>";
+            appendRow += "<button style='margin-left:5px;' class='deleteBtn btn btn-danger'  data-id=" + value.Id + ">Delete</a></td></tr>";
             //tBody.innerHTML += appendRow;
 
         });
         $('#stdList').html('').append(appendRow);
-
+        $('.editNewWindowBtn').click(function () {
+         var id=$(this).attr('data-id');
+         localStorage.setItem('StudentId',id);
+         window.location.href='EditStudent.html';
+        });
         $('.deleteBtn').click(function () {
             debugger;
             var id = parseInt($(this).attr('data-id'));
-            var url = baseUrl + '?id=' + id;
-            serverCall(url, "delete", null, successd)
+            var url = baseUrl + 'Student?id=' + id;
+            serverCall(url, "delete", null, successd);
             function successd() {
                 StudentListGeneric();
             }
@@ -35,7 +40,7 @@ function StudentListGeneric() {
         $('.editBtn').click(function () {
             debugger;
             var id = parseInt($(this).attr('data-id'));
-            var url = baseUrl + '?id=' + id;
+            var url = baseUrl + 'Student?id=' + id;
             var parent = $(this).closest('tr');
 
             // var student=ajaxCall(url,"get");
@@ -77,7 +82,7 @@ function StudentListGeneric() {
                 student.ConfirmPassword = parent.find('#Password').val();
 
                 if (validateStudent(student, parent.next())) {
-                    serverCall(baseUrl, "put", student, successPutStudent);
+                    serverCall(baseUrl+'Student', "put", student, successPutStudent);
                     function successPutStudent(result) {
                         StudentListGeneric();
                     }
@@ -138,7 +143,7 @@ function addNewStudentRow() {
         student.Password = parent.find('#Password').val();
         student.ConfirmPassword = parent.find('#Password').val();
         if (validateStudent(student, parent.next())) {
-            if (serverCall(baseUrl, "post", student, successP, errorP)) { StudentListGeneric(); } else { alert("ajax failed to post data"); }
+            if (serverCall(baseUrl+'Student', "post", student, successP, errorP)) { StudentListGeneric(); } else { alert("ajax failed to post data"); }
             function successP(result) {
                 return true;
             }
@@ -277,28 +282,97 @@ function addStudent() {
         debugger;
   
       //  serverCallStudent('https://localhost:44330/api/Student', "Post",obj, success, error)
-
-      $.ajax({
-        type: "post",
-        async: false,  
-        url: 'https://localhost:44330/api/Student?student='+JSON.stringify(student),
+      serverCall(baseUrl+'Student?student='+JSON.stringify(student),"POST",null,successP);
+      function successP(){
+       window.location.reload();
+      }
+    }
+    //   $.ajax({
+    //     type: "post",
+    //     async: false,  
+    //     url: 'https://localhost:44330/api/Student?student='+JSON.stringify(student),
         
-        contentType: 'application/json; charset=UTF-8',  //send type of data to sever
-        traditional: true,
+    //     contentType: 'application/json; charset=UTF-8',  //send type of data to sever
+    //     traditional: true,
         
-        success:function(){
+    //     success:function(){
 
-        },
+    //     },
       
-        error:function(){
+    //     error:function(){
 
-        }
-     });
-        return bool;
-    }
-    else {
-        return false;
-    }
+    //     }
+    //  });
+    //     return bool;
+    // }
+    // else {
+    //     return false;
+    // }
 
 
 }
+
+//#region  Edit Student On Another Page
+function editStudentGet() {
+  
+    var studentId = JSON.parse(localStorage.getItem("StudentId"));
+    if (studentId == null) {
+        return false;
+    }
+    serverCall(baseUrl+'Student?id='+studentId,"GET",null,successg);
+    function successg(data,status){
+        debugger;
+        $('#id').val(data.Id);
+        $('#Name').val(data.Name);
+        $('#FName').val(data.FName);
+        $('#email').val(data.Email);
+        $('#phone').val(data.Phone);
+        $('#Password').val(data.Password);
+        $('#ConfrimPassword').val(data.ConfirmPassword);
+        $('#DOB').val(data.Dob);
+        $('#courseslct').val(data.Courses);
+    }
+   
+}
+
+function editStudentPost() {
+    
+    var id = document.getElementById("id").value;
+    var name = document.getElementById("Name").value;
+    var fName = document.getElementById("FName").value;
+    var email = document.getElementById("email").value;
+    var phone = document.getElementById("phone").value;
+    var password = document.getElementById("Password").value;
+    var confirmPassword = document.getElementById("ConfrimPassword").value;
+    var dob = document.getElementById("DOB").value;
+
+    if (validateStudentForm(name, fName, email, phone, password, confirmPassword)) {
+
+        // var stdArr = [];
+        //var stdDobStr = stdDob.toString();
+        var student = {
+            "Id": id,
+            "name": name,
+            "fName": fName,
+            "email": email,
+            "Phone": phone,
+            "dob": dob.toString(),
+            "password": password,
+            "ConfrimPassword": confirmPassword
+        }
+        var students = JSON.parse(localStorage.getItem("student"));
+
+        students.forEach(function(value, index) {
+            if (value.Id == student.Id) {
+               
+                students[index] = student;
+                localStorage.setItem("student", JSON.stringify(students));
+                window.location.href = 'C:\Users\Administrator\Desktop\Internship\StudentList.html';
+            }
+        })
+
+    } else {
+        return false;
+    }
+}
+//#endregion 
