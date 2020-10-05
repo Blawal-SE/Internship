@@ -1,5 +1,9 @@
 ﻿using Newtonsoft.Json;
-using School.Data.Models;
+
+using School.Data;
+using School.Models;
+using School.Repository;
+using School.Repository.View;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,44 +12,47 @@ using System.Net.Http;
 using System.Web.Http;
 
 
-namespace school.WebApi.Controller
+namespace School.WebApi.Controller
 {
     public class StudentController : ApiController
     {
-        /*api/Student*/
-     [HttpGet]
+        private StudentRepository repo = new StudentRepository();
+        
+        
+            [HttpGet]
         public IHttpActionResult Get()
         { 
-            var students = StudentRepository.Instance.GetAllStudent();
+            var students = repo.GetStudents();
             return Ok(students);
         }
         [HttpGet]
         public IHttpActionResult Get(int id)
         {
           
-            return Ok(StudentRepository.Instance.FindStudent(id));
+            return Ok(repo.FindStudent(id));
         }
         [HttpPost]
-        public IHttpActionResult Post([FromBody]Student student)
+        public IHttpActionResult Post(string student)
         {
-          
-            StudentRepository.Instance.CreateStudent(student);
+            StudentDtoPost model = new StudentDtoPost();
+                model = JsonConvert.DeserializeObject<StudentDtoPost>(student);
+           var message= repo.AddStudent(model.student,model.courses);
            
-            return Ok(true); 
+            return Ok(message); 
         }
         [HttpPut]
         public IHttpActionResult Put([FromBody]Student student)
         {
 
-            StudentRepository.Instance.EditStudent(student);
+            repo.Update(student);
 
             return Ok(true);
         }
         [HttpDelete]
-        public IHttpActionResult Delete([FromBody]int id)
+        public IHttpActionResult Delete(int id)
         {
 
-            StudentRepository.Instance.DeleteStudent(id);
+            repo.Delete(id);
 
             return Ok(true);
         }
