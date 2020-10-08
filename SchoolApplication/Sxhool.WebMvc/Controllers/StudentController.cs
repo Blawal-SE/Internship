@@ -28,7 +28,6 @@ namespace Sxhool.WebMvc.Controllers
         public ActionResult AddStudent()
         {
             return View(CourseRepository.Instance.GetAll());
-
         }
         [HttpPost]
         public JsonResult AddStudent(string student)
