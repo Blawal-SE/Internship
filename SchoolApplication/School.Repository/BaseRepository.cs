@@ -61,17 +61,9 @@ namespace School.Repository
 
         public  void Update(T obj)
         {
-            // _context.Entry(obj).Entity = EntityState.Modified;
-            // T aa = _dbset.Find(Id);
-            // some logic
-            //_dbset.Detach(aa);
-            // repo.Update(a);
-            // _dbset.AddOrUpdate(obj);
-            //    _context.Entry(obj).State = EntityState.Added;
-           // _context.Set<T>().AddOrUpdate(obj);
-            //var existingAttach = _dbset.Attach(obj);
+           
             _context.Entry(obj).State = EntityState.Modified;
-            //  _context.Entry(obj).CurrentValues.SetValues(obj);
+           
             Save();
         }
        
