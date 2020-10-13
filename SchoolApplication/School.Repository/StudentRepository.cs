@@ -13,35 +13,23 @@ namespace School.Repository
     public class StudentRepository : BaseRepository<Student>
     {
         #region student Repository
-        public List<StudentDtoPost> GetStudents()
+        public List<StudentDtoPost> GetStudents(Pager pager)
         {
-            List<StudentDtoPost> DtoList = new List<StudentDtoPost>();
+          //  List<StudentDtoPost> DtoList = new List<StudentDtoPost>();
             try
             {
+               
                 using (SchoolContext db = new SchoolContext())
                 {            //Simple Join to gett Student With count of Courses
                     var students = (from s in db.Students
                                     select new StudentDtoPost()
                                     {
                                         student = s,
-                                        CoursesCount = (from sc in db.StudentCourses.Where(x => x.StudentId == s.Id)
-                                                        select sc.StudentId).Count()
-                                    }).ToList();
+                                        CoursesCount =db.StudentCourses.Where(x => x.StudentId == s.Id).Select(x=>x.CourseId).Count()
+                                       
+                                    }).OrderBy(x=>x.student.Name).Skip(pager.start).Take(pager.length).ToList();
+                    students[0].TotalRecords = db.Students.Count();
                     return students;
-                    //used before to get Coursecount without Jooin
-                    //var StdList = db.Students.ToList();
-
-                    //foreach (var student in StdList)
-                    //{
-                    //  StudentDtoPost dto = new StudentDtoPost();
-                    //   dto.student = student;
-                    //    dto.CoursesCount = db.StudentCourses.Where(x => x.StudentId == student.Id).Count();
-
-                    //    DtoList.Add(dto);
-
-                    // }
-
-
                 }
             }
             catch (Exception e)
@@ -50,8 +38,6 @@ namespace School.Repository
                 throw e;
             }
         
-
-
         }
         public StudentDtoPost FindStudent(int id)
         {
@@ -83,23 +69,37 @@ namespace School.Repository
                 throw e;
             }
         }
-        public bool AddStudent(Student obj, String courses)
+        public bool AddStudent(AddEditStudentDto studentDto)
         {
             try
             {
                 using (SchoolContext db = new SchoolContext())
                 {
                     StudentCourse stdCourse = new StudentCourse();
-                    db.Students.Add(obj);
-                    stdCourse.StudentId = obj.Id;
-                    var courseList = courses.Split(',').ToList();
-                    foreach (var course in courseList)
+                    Student s = new Student();
+                    s.Name = studentDto.Name;
+                    s.FName = studentDto.FName;
+                    s.Dob = studentDto.Dob;
+                    s.Email = studentDto.Email;
+                    s.Password = studentDto.Password;
+                    s.ConfirmPassword = studentDto.ConfirmPassword;
+                    db.Students.Add(s);
+                    List<StudentCourse> courseList = new List<StudentCourse>();
+                    if (studentDto.Courses != null)
                     {
-                        stdCourse.CourseId = Convert.ToInt32(course);
-                        db.StudentCourses.Add(stdCourse);
+                        foreach (var Course in studentDto.Courses)
+                        {
+                            StudentCourse course_Obj = new StudentCourse();
+                            course_Obj.StudentId = studentDto.student.Id;
+                            course_Obj.CourseId = Convert.ToInt32(Course);
+                            courseList.Add(course_Obj);
+
+                        }
+                        db.StudentCourses.AddRange(courseList);
                         db.SaveChanges();
+
                     }
-                     
+
                 }
             }
             catch (Exception e)
@@ -111,7 +111,7 @@ namespace School.Repository
             return true;
 
         }
-        public bool UpdateStudent(StudentDtoPost stdPost)
+        public bool UpdateStudent(AddEditStudentDto stdPost)
         {
             try
             {
@@ -119,14 +119,23 @@ namespace School.Repository
                 {
 
                     //update first Student
-                    db.Entry(stdPost.student).State = EntityState.Modified;
-                    //now First Find Courses And delete then Add Newly come Added Courses
-                    var stdPreCourses = db.StudentCourses.Where(x => x.StudentId == stdPost.student.Id).ToList();
+                    Student s = new Student();
+                    s.Id = stdPost.Id;
+                    s.Name = stdPost.Name;
+                    s.FName = stdPost.FName;
+                    s.Dob = stdPost.Dob;
+                    s.Email = stdPost.Email;
+                    s.Password = stdPost.Password;
+                    s.ConfirmPassword = stdPost.ConfirmPassword;
+                    db.Entry(s).State = EntityState.Modified;
+                    //now First Find Courses And delete previous courses for Student
+                    var stdPreCourses = db.StudentCourses.Where(x => x.StudentId == stdPost.Id).ToList();
                     if (stdPreCourses != null)
                     {
                         db.StudentCourses.RemoveRange(stdPreCourses);
                         db.SaveChanges();
                     }
+                    //Now Add Newly Added Courses
                     List<StudentCourse> courseList = new List<StudentCourse>();
                     if (stdPost.Courses != null)
                     {
@@ -138,16 +147,14 @@ namespace School.Repository
                             courseList.Add(course_Obj);
 
                         }
+                       
                         db.StudentCourses.AddRange(courseList);
                         db.SaveChanges();
 
                     }
 
-
                 }
                 //Adding updated  Courses
-
-            
             }
             catch (Exception e)
             {
@@ -155,7 +162,6 @@ namespace School.Repository
             }
 
             return true;
-
         }
         public bool DeleteStudent(int id)
         {
@@ -164,8 +170,6 @@ namespace School.Repository
                 using (var context = new SchoolContext())
                 {
                    var std= context.Students.Where(x => x.Id == id).FirstOrDefault();
-                    //  StudentCourse stdCourse = new StudentCourse();
-                    // stdCourse.StudentId = std.Id;
                     var stdcourses = context.StudentCourses.Where(x => x.StudentId == id);
                     foreach (var course in stdcourses)
                     {
@@ -179,14 +183,49 @@ namespace School.Repository
             }
             catch (Exception)
             {
-
                 return false;
             }
-
-
         }
 
         #endregion
+        #region Crud Through Procedures
+        public bool AddStudentByProcedure(AddEditStudentDto s)
+        {
+            try
+            {
+                using (var context = new SchoolContext())
+                {
+                    var id = Convert.ToInt32(context.AddStudent(s.Name, s.FName, s.Phone, s.Email, s.Dob, s.Password, s.ConfirmPassword));
+                    context.AddCourses(id,s.Courses);
+                    return true;
+                }
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+          
 
+        }
+        public List<Student> GetStudentsByProcedure()
+        {
+            try
+            {
+                using (var context=new SchoolContext())
+                {
+                    return context.Students.ToList();
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+        public void FilterStudentByName(Student s)
+        {
+
+        }
+        #endregion
     }
 }
