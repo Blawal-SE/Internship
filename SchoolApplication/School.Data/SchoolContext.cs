@@ -16,7 +16,6 @@ namespace School.Data
     {
         public SchoolContext() : base("name=School")
         {
-
         }
         public  DbSet<Student> Students { get; set; }
         public DbSet<Course> Courses { get; set; }
@@ -24,7 +23,6 @@ namespace School.Data
 
         public virtual decimal? AddStudent(string name, string fname,string phone, string email, string dob, string password, string confirmpassword)
         {
-          
             var name_param = new SqlParameter("@Name", name);
             var fname_param = new SqlParameter("@FNname", fname);
             var phone_param = new SqlParameter("@Phone", phone);
@@ -34,11 +32,9 @@ namespace School.Data
             var email_param = new SqlParameter("@Email", email);
             
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteStoreQuery<Nullable<Decimal>>("AddStudent  @Name ,@FNname ,@Email ,@Phone, @Dob ,@Password ,@ConfirmPassword", name_param, fname_param, email_param, phone_param, dob_param, password_param, confirmpassword_param).First();
-               
         }
         public virtual void AddCourses(int StudentId, List<int> courseslist)
         {
-
             try
             {
                 if (courseslist != null)
@@ -49,17 +45,11 @@ namespace School.Data
                         var StudentId_param = new SqlParameter("@StudentId", StudentId);
                         ((IObjectContextAdapter)this).ObjectContext.ExecuteStoreQuery<Nullable<decimal>>("AddCourse @CourseId,@StudentId",courseid_param, StudentId_param).First();
                     }
-                  
-                }
-                
+                } 
             }
             catch (Exception e)
             {
-               
-               
             }
-
         }
-
     }
 }

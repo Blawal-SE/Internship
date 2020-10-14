@@ -38,11 +38,10 @@ namespace Sxhool.WebMvc.Controllers
         public ActionResult AddStudent(AddEditStudentDto model)
         {                     //used  to To add Student With Procedure
             return  _repo.AddStudentByProcedure(model) ? RedirectToAction("Index", new { message = "successfully added student" }) : RedirectToAction("Index", new { message = "Unable to add student" });
-                          
                               //used before to To add Student Without Procedure
             //_repo.AddStudent(model) ? RedirectToAction("Index") : RedirectToAction("Index", new { message = "Unable to add student" });
-
         }
+
         [HttpGet]
         public ActionResult EditStudent(int id)
         {
@@ -61,16 +60,12 @@ namespace Sxhool.WebMvc.Controllers
         public ActionResult EditStudent(AddEditStudentDto model)
         {
             return _repo.UpdateStudent(model) ? RedirectToAction("Index") : RedirectToAction("Index", new { message = "Unable to add student" });
-
-
         }
+
         [HttpGet]
         public ActionResult DeleteStudent(int id)
         {
            return _repo.Delete(id)? RedirectToAction("Index", new { message = "Successfully deleted Student" }): RedirectToAction("Index", new { message = "Unable to delete Student" });
-
         }
-       
-
     }
 }

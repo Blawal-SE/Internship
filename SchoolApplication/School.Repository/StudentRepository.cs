@@ -15,10 +15,8 @@ namespace School.Repository
         #region student Repository
         public List<StudentDtoPost> GetStudents(Pager pager)
         {
-          //  List<StudentDtoPost> DtoList = new List<StudentDtoPost>();
             try
             {
-               
                 using (SchoolContext db = new SchoolContext())
                 {            //Simple Join to gett Student With count of Courses
                     var students = (from s in db.Students
@@ -26,7 +24,6 @@ namespace School.Repository
                                     {
                                         student = s,
                                         CoursesCount =db.StudentCourses.Where(x => x.StudentId == s.Id).Select(x=>x.CourseId).Count()
-                                       
                                     }).OrderBy(x=>x.student.Name).Skip(pager.start).Take(pager.length).ToList();
                     students[0].TotalRecords = db.Students.Count();
                     return students;
@@ -34,17 +31,14 @@ namespace School.Repository
             }
             catch (Exception e)
             {
-
                 throw e;
             }
-        
         }
         public StudentDtoPost FindStudent(int id)
         {
             try
             {
-                
-                using (var context = new SchoolContext())
+                 using (var context = new SchoolContext())
                 {
                    var students = (from s in context.Students.Where(x => x.Id == id)
                                     select new StudentDtoPost
@@ -65,7 +59,6 @@ namespace School.Repository
             }
             catch (Exception e)
             {
-
                 throw e;
             }
         }
@@ -97,28 +90,21 @@ namespace School.Repository
                         }
                         db.StudentCourses.AddRange(courseList);
                         db.SaveChanges();
-
                     }
-
                 }
             }
             catch (Exception e)
             {
-
                 return false;
             }
-
             return true;
-
         }
         public bool UpdateStudent(AddEditStudentDto stdPost)
         {
             try
             {
                 using (SchoolContext db = new SchoolContext())
-                {
-
-                    //update first Student
+                {       //update first Student
                     Student s = new Student();
                     s.Id = stdPost.Id;
                     s.Name = stdPost.Name;
@@ -128,7 +114,7 @@ namespace School.Repository
                     s.Password = stdPost.Password;
                     s.ConfirmPassword = stdPost.ConfirmPassword;
                     db.Entry(s).State = EntityState.Modified;
-                    //now First Find Courses And delete previous courses for Student
+                       //now First Find Courses And delete previous courses for Student
                     var stdPreCourses = db.StudentCourses.Where(x => x.StudentId == stdPost.Id).ToList();
                     if (stdPreCourses != null)
                     {
@@ -145,14 +131,10 @@ namespace School.Repository
                             course_Obj.StudentId = stdPost.student.Id;
                             course_Obj.CourseId = Convert.ToInt32(Course);
                             courseList.Add(course_Obj);
-
                         }
-                       
                         db.StudentCourses.AddRange(courseList);
                         db.SaveChanges();
-
                     }
-
                 }
                 //Adding updated  Courses
             }
@@ -160,7 +142,6 @@ namespace School.Repository
             {
                 return false;
             }
-
             return true;
         }
         public bool DeleteStudent(int id)
@@ -186,7 +167,6 @@ namespace School.Repository
                 return false;
             }
         }
-
         #endregion
         #region Crud Through Procedures
         public bool AddStudentByProcedure(AddEditStudentDto s)
@@ -204,8 +184,6 @@ namespace School.Repository
             {
                 return false;
             }
-          
-
         }
         public List<Student> GetStudentsByProcedure()
         {
@@ -218,14 +196,10 @@ namespace School.Repository
             }
             catch (Exception)
             {
-
                 throw;
             }
         }
-        public void FilterStudentByName(Student s)
-        {
-
-        }
+      
         #endregion
     }
 }

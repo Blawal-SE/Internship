@@ -13,9 +13,6 @@ namespace School.Repository.View
         public List<Columns> columns { get; set; }
         public List<Order> order{ get; set; }
         public Search search { get; set; }
-
-
-
     }
     public class Columns
     {
@@ -33,7 +30,6 @@ namespace School.Repository.View
     public class Order
     {
         public int column { get; set; }
-
         public string  dir { get; set; }
     }
    
