@@ -7,86 +7,65 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Linq.Dynamic;
 
 namespace Sxhool.WebMvc.Controllers
 {
     public class StudentController : Controller
     {
         private StudentRepository _repo = new StudentRepository();
-   
-        // GET: Student
-        [HttpGet]
         public ActionResult Index(string message)
-        {  if(message!="" && message != null) 
+        {
+            if (!string.IsNullOrEmpty(message) )
             {
                 ViewBag.message = message;
             }
-           List<StudentDtoPost> model= _repo.GetStudents();
-            return View(model);
+            return View();
         }
+        [HttpPost]
+        public ActionResult LoadStudents(Pager pager)
+        {
+            List<StudentDtoPost> model = _repo.GetStudents(pager);
+            return Json(new { draw = pager.draw, recordsFiltered = model[0].TotalRecords, recordsTotal = model[0].TotalRecords, data = model }, JsonRequestBehavior.AllowGet);
+        }
+
         [HttpGet]
         public ActionResult AddStudent()
         {
             return View(CourseRepository.Instance.GetAll());
         }
         [HttpPost]
-        public JsonResult AddStudent(string student)
-        {
-            JsonResult result = new JsonResult();
-            result.JsonRequestBehavior = JsonRequestBehavior.AllowGet;
-            StudentDtoPost model = JsonConvert.DeserializeObject<StudentDtoPost>(student);
-            if(_repo.AddStudent(model.student,model.courses))
-            {
-                result.Data = new { success = true };
-                return result;
-            }else
-            {
-                result.Data = new { success = false };
-                return result;
-            }
-           
+        public ActionResult AddStudent(AddEditStudentDto model)
+        {                     //used  to To add Student With Procedure
+            return  _repo.AddStudentByProcedure(model) ? RedirectToAction("Index", new { message = "successfully added student" }) : RedirectToAction("Index", new { message = "Unable to add student" });
+                              //used before to To add Student Without Procedure
+            //_repo.AddStudent(model) ? RedirectToAction("Index") : RedirectToAction("Index", new { message = "Unable to add student" });
         }
+
         [HttpGet]
         public ActionResult EditStudent(int id)
         {
             var model = _repo.FindStudent(id);
-            model.AllCoursesList = CourseRepository.Instance.GetAll();
-            if (model != null && model.AllCoursesList != null)
+            if (_repo.FindStudent(id) != null)
             {
+                model.AllCoursesList = CourseRepository.Instance.GetAll();
                 return View(model);
             }
             else
             {
-                return RedirectToAction("Index", new { message = "Unable To Find Student Some Error Occured" });
+                return RedirectToAction("AllStudent", new { message = "Unable To Find Student Some Error Occured" });
             }
         }
         [HttpPost]
-        public ActionResult EditStudent(string student)
+        public ActionResult EditStudent(AddEditStudentDto model)
         {
-            StudentDtoPost model = JsonConvert.DeserializeObject<StudentDtoPost>(student);
-            if (_repo.UpdateStudent(model))
-            {
-                return RedirectToAction("Index", new { message = "Successfully Edit Student:" + model.student.Name });
-
-            }
-            else
-            {
-                return RedirectToAction("Index", new { message = "Unable To Edit Student"+model.student.Name });
-            }
-
+            return _repo.UpdateStudent(model) ? RedirectToAction("Index") : RedirectToAction("Index", new { message = "Unable to add student" });
         }
+
         [HttpGet]
         public ActionResult DeleteStudent(int id)
         {
-            if (_repo.Delete(id)){
-                return RedirectToAction("Index",new { message="Successfully deleted Student"});
-            }
-            else
-            {
-                return RedirectToAction("Index", new { message = "Unable to delete Student" });
-            }
-           
+           return _repo.Delete(id)? RedirectToAction("Index", new { message = "Successfully deleted Student" }): RedirectToAction("Index", new { message = "Unable to delete Student" });
         }
-       
     }
 }
