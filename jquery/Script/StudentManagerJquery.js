@@ -1,19 +1,21 @@
 var studentArray = [];
-var baseUrl = 'https://localhost:44330/api/';
-
+var baseUrl = 'https://localhost:44393/';
+var basUrlApiNull='https://localhost:44393/';
+var emptyImage='Content/images/emptyimage.jpg';
 //#region Generic Ajax  crud operation On student Table 
 
 function StudentListGeneric() {
-    serverCall(baseUrl+"Student", "get", null, successg);
+    serverCall(basUrlApiNull+"/api/Student", "get", null, successg);
     // ajax start to get all student and put records in Table
     function successg(result) {
+        debugger;
         var appendRow = "";
         result.forEach(function (value, index) {
      
-            appendRow += "<tr><td>" + value.student.Name + "</td>" + "<td>" + value.student.FName + "</td>" + "<td>" + value.student.Email + "</td>" + "<td>" + value.student.Phone + "</td>" + "<td>" + value.student.Dob + "</td>" + "<td>" + value.student.Password + "</td>"+"<td>"+value.CoursesCount+"</td>";
-            appendRow += "<td><button class='editBtn btn btn-primary'  data-id=" + value.student.Id + ">Edit</button>";
-            appendRow += "<button style='margin-left:5px;' class='editNewWindowBtn btn btn-secondary'  data-id=" + value.student.Id + ">Edit With Courses</button>";
-            appendRow += "<button style='margin-left:5px;' class='deleteBtn btn btn-danger'  data-id=" + value.student.Id + ">Delete</a></td></tr>";
+            appendRow += "<tr><td>" + value.Name + "</td>" + "<td>" + value.FName + "</td>" + "<td>" + value.Email + "</td>" + "<td>" + value.Phone + "</td>" + "<td>" + value.Dob + "</td>" + "<td>" + value.Password + "</td>"+"<td>"+value.CoursesCount+"</td>";
+          
+            appendRow += "<td><button style='margin-left:5px;' class='editNewWindowBtn btn btn-secondary'  data-id=" + value.Id + ">Edit</button>";
+            appendRow += "<button style='margin-left:5px;' class='deleteBtn btn btn-danger'  data-id=" + value.Id + ">Delete</button></td></tr>";
             //tBody.innerHTML += appendRow;
 
         });
@@ -26,7 +28,7 @@ function StudentListGeneric() {
         $('.deleteBtn').click(function () {
             debugger;
             var id = parseInt($(this).attr('data-id'));
-            var url = baseUrl + 'Student?id=' + id;
+            var url = baseUrl + '/api/Student?id=' + id;
             serverCall(url, "delete", null, successd);
             function successd() {
                 StudentListGeneric();
@@ -215,8 +217,8 @@ function validateStudentForm(student, parent) {
 //#endregion
 
 //add student Form post method on Table
-function addStudent() {
-    debugger;
+function addStudentP() {
+  debugger;
     var name = $('#Name').val(); //document.getElementById("Name").value;
     var fName = $('#FName').val(); // document.getElementById("FName").value;
     var email = $('#email').val(); //document.getElementById("FName").value;
@@ -225,84 +227,55 @@ function addStudent() {
 
     var confirmPassword = $('#ConfrimPassword').val(); //document.getElementById("ConfrimPassword").value;
     var dob = $('#DOB').val().toString(); //document.getElementById("DOB").value;
-    var arr=$('#courseslct').select2('data');
-    var courses="";
+    var arr=$('#courseslct').val();
+    var imageUrl=$('#ImageUrl').val();
+    var thumburl=$('#ThumbUrl').val();
     debugger;
-    arr.forEach(function (value,index,array) {
-        if(array.length<=index+1){
-        courses += value.id;
-        }else{
-            courses += value.id+",";;
-        }
-
-    });
     var student = {
-      "student":{
         "Name": name,
         "FName": fName,
         "Email": email,
         "Phone": phone,
         "Dob": dob.toString(),
         "Password": password,
-        "ConfirmPassword": confirmPassword 
-              },
-         "courses":courses
-       
+        "ConfirmPassword": confirmPassword, 
+         "Courses":arr,
+         "ImageUrl":imageUrl,
+         "ThumbUrl":thumburl
     }
-    if (validateStudentForm(student, $('#parent'))) {
-
-        var bool = true;
-        debugger;
-  
-      //  serverCallStudent('https://localhost:44330/api/Student', "Post",obj, success, error)
-      serverCall(baseUrl+'Student?student='+JSON.stringify(student),"POST",null,successP);
+    if (validateStudent(student, $('#parent'))) {
+      serverCall(baseUrl+'Student',"POST",student,successP,function(fail){alert(fail)});
       function successP(){
        window.location.reload();
       }
     }
-    //   $.ajax({
-    //     type: "post",
-    //     async: false,  
-    //     url: 'https://localhost:44330/api/Student?student='+JSON.stringify(student),
-        
-    //     contentType: 'application/json; charset=UTF-8',  //send type of data to sever
-    //     traditional: true,
-        
-    //     success:function(){
-
-    //     },
-      
-    //     error:function(){
-
-    //     }
-    //  });
-    //     return bool;
-    // }
-    // else {
-    //     return false;
-    // }
-
-
 }
 
 //#region  Edit Student On Another Page
 function editStudentGet() {
-  
-    var studentId = JSON.parse(localStorage.getItem("StudentId"));
+    var studentId = parseInt(JSON.parse(localStorage.getItem("StudentId")));
     if (studentId == null) {
         return false;
     }
-    serverCall(baseUrl+'Student?id='+studentId,"GET",null,successg);
+    serverCall(basUrlApiNull+'/api/Student?id='+studentId,"GET",null,successg);
     function successg(data,status){
         debugger;
-        $('#id').val(data.student.Id);
-        $('#Name').val(data.student.Name);
-        $('#FName').val(data.student.FName);
-        $('#email').val(data.student.Email);
-        $('#phone').val(data.student.Phone);
-        $('#Password').val(data.student.Password);
-        $('#ConfrimPassword').val(data.student.ConfirmPassword);
-        $('#DOB').val(data.student.Dob);
+        $('#id').val(data.Id);
+        $('#Name').val(data.Name);
+        $('#FName').val(data.FName);
+        $('#email').val(data.Email);
+        $('#phone').val(data.Phone);
+        $('#Password').val(data.Password);
+        $('#ConfrimPassword').val(data.ConfirmPassword);
+        $('#DOB').val(data.Dob);
+        if (data.ImageUrl == "" || data.ImageUrl == null) {
+            $("#stdImage").attr("src", emptyImage);
+            $("#ImageUrl").val(null);
+        } else {
+            
+            $("#stdImage").attr("src", data.ImageUrl);
+            $("#ImageUrl").val(data.ImageUrl);
+        }
         debugger;
         data.StudentCourses.forEach(function(value,index){
             $('.select2').each(function () {
@@ -315,7 +288,6 @@ function editStudentGet() {
         });
        localStorage.removeItem('StudentId');
     }
-   
 }
 
 function editStudentPost() {
@@ -326,12 +298,11 @@ function editStudentPost() {
     var email = $("#email").val();
     var phone = $("#phone").val();
     var password = $("#Password").val();
-    debugger;
     var confirmPassword = $("#ConfrimPassword").val();
     var dob = $("#DOB").val();
     var coursesArr=$('#courseslct').val();
+    var imageUrl=$('#ImageUrl').val();
     var student = {
-        "student":{
         "Id": id,
         "Name": name,
         "FName": fName,
@@ -339,16 +310,12 @@ function editStudentPost() {
         "Phone": phone,
         "Dob": dob.toString(),
         "Password": password,
-        "ConfirmPassword": confirmPassword
-         },
-        "Courses":coursesArr
+        "ConfirmPassword": confirmPassword,
+        "Courses":coursesArr,
+        "ImageUrl":imageUrl
     }
-    if (validateStudentForm(student,$('#parent'))) {
-
-        // var stdArr = [];
-        //var stdDobStr = stdDob.toString();
-      
-        serverCall(baseUrl+'Student?student='+JSON.stringify(student),"put",null,successP);
+    if (validateStudent(student,$('#parent'))) {
+        serverCall(basUrlApiNull+'/api/Student',"put",student,successP);
         function successP(){
          window.location.href='StudentList.html';
         }
@@ -357,3 +324,68 @@ function editStudentPost() {
     }
 }
 //#endregion 
+//#region login
+function Login()
+{
+    var data = {
+
+        "username":$("#userName").val(),
+        "password":$("#password").val(),
+        "grant_type":'password'
+    };
+  
+
+    serverCall(basUrlApiNull+'Login','POst',data,function(result){
+        sessionStorage.setItem('accessToken', result.access_token);
+         sessionStorage.setItem('User',JSON.stringify(result));
+        // sessionStorage.setItem('username', result.Email);
+        window.location.href = "StudentList.html";
+    },function(failresult){
+      alert(failresult);
+    });
+}
+//#endregion
+
+//#region GetUserDetail
+function Getuser()
+{
+   return JSON.parse(sessionStorage.getItem('User'));
+}
+//#endregion
+//#region imageUpload
+function imageUpload(element)
+{  
+    var formdata = new FormData();
+    var totalfiles = element.files.length;
+  for (var i = 0; i < totalfiles; i++) {
+    var file = element.files[i];
+    formdata.append("photo", file);
+  }
+    $.ajax({
+        type: 'post',
+        url: basUrlApiNull+'/api/Upload',
+        data: formdata,
+        dataType: 'json',
+        contentType: false,
+        processData:false
+    })
+   .done(function (response) {
+       debugger;
+       if(response.Message=="Success")
+       {
+      $("#stdImage").attr("src", response.RealPath);
+      $("#ImageUrl").val(response.RealPath);
+      $("#ThumbUrl").val(response.ThumbPath);
+     }else{
+         alert("No file is Choosed")
+     }
+   })
+   .fail(function (XMLHttpRequeat, textStatus, errorThrown) {
+       alert("fail")
+   });
+}
+//#endregion
+function setEmptyImage(element)
+{
+element.attr("src", emptyImage);
+}
