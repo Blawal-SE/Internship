@@ -1,22 +1,31 @@
-﻿using Newtonsoft.Json;
-using School.Models;
-using School.Repository;
-using School.Repository.View;
+﻿
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Linq.Dynamic;
+using IData;
+using IRepository;
+using School.Dto.View;
 
 namespace Sxhool.WebMvc.Controllers
 {
+    [Authorize]
     public class StudentController : Controller
     {
-        private StudentRepository _repo = new StudentRepository();
+
+        private readonly IStudent _repo;
+        private readonly ICourse _CourseRepo;
+        public StudentController(IStudent Cont, ICourse course)
+        {
+            _repo = Cont;
+            _CourseRepo = course;
+        }
+        //  private StudentRepository _repo = new StudentRepository(context);
         public ActionResult Index(string message)
         {
-            if (!string.IsNullOrEmpty(message) )
+            if (!string.IsNullOrEmpty(message))
             {
                 ViewBag.message = message;
             }
@@ -32,14 +41,14 @@ namespace Sxhool.WebMvc.Controllers
         [HttpGet]
         public ActionResult AddStudent()
         {
-            return View(CourseRepository.Instance.GetAll());
+            return View(_CourseRepo.GetAll());
         }
         [HttpPost]
         public ActionResult AddStudent(AddEditStudentDto model)
         {                     //used  to To add Student With Procedure
-            return  _repo.AddStudentByProcedure(model) ? RedirectToAction("Index", new { message = "successfully added student" }) : RedirectToAction("Index", new { message = "Unable to add student" });
+                              //  return _repo.AddStudentByProcedure(model) ? RedirectToAction("Index", new { message = "successfully added student" }) : RedirectToAction("Index", new { message = "Unable to add student" });
                               //used before to To add Student Without Procedure
-            //_repo.AddStudent(model) ? RedirectToAction("Index") : RedirectToAction("Index", new { message = "Unable to add student" });
+            return _repo.AddStudent(model) ? RedirectToAction("Index") : RedirectToAction("Index", new { message = "Unable to add student" });
         }
 
         [HttpGet]
@@ -48,7 +57,7 @@ namespace Sxhool.WebMvc.Controllers
             var model = _repo.FindStudent(id);
             if (_repo.FindStudent(id) != null)
             {
-                model.AllCoursesList = CourseRepository.Instance.GetAll();
+                model.AllCoursesList = CourseRepository.GetAll();
                 return View(model);
             }
             else
@@ -65,7 +74,7 @@ namespace Sxhool.WebMvc.Controllers
         [HttpGet]
         public ActionResult DeleteStudent(int id)
         {
-           return _repo.Delete(id)? RedirectToAction("Index", new { message = "Successfully deleted Student" }): RedirectToAction("Index", new { message = "Unable to delete Student" });
+            return _repo.Delete(id) ? RedirectToAction("Index", new { message = "Successfully deleted Student" }) : RedirectToAction("Index", new { message = "Unable to delete Student" });
         }
     }
 }

@@ -1,0 +1,59 @@
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\DependancyInjection\obj\Debug\DependancyInjection.csprojAssemblyReference.cache
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\DependancyInjection\bin\Debug\DependancyInjection.dll.config
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\DependancyInjection\bin\Debug\DependancyInjection.dll
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\DependancyInjection\bin\Debug\DependancyInjection.pdb
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\DependancyInjection\bin\Debug\EntityFramework.dll
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\DependancyInjection\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\DependancyInjection\bin\Debug\IData.dll
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\DependancyInjection\bin\Debug\IRepository.dll
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\DependancyInjection\bin\Debug\Ninject.dll
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\DependancyInjection\bin\Debug\School.Data.dll
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\DependancyInjection\bin\Debug\School.Repository.dll
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\DependancyInjection\bin\Debug\School.Models.dll
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\DependancyInjection\bin\Debug\Schoo.Dto.dll
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\DependancyInjection\bin\Debug\IData.pdb
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\DependancyInjection\bin\Debug\IData.dll.config
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\DependancyInjection\bin\Debug\IRepository.pdb
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\DependancyInjection\bin\Debug\School.Data.pdb
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\DependancyInjection\bin\Debug\School.Data.dll.config
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\DependancyInjection\bin\Debug\School.Repository.pdb
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\DependancyInjection\bin\Debug\School.Repository.dll.config
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\DependancyInjection\bin\Debug\EntityFramework.xml
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\DependancyInjection\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\DependancyInjection\bin\Debug\Ninject.xml
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\DependancyInjection\bin\Debug\School.Models.pdb
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\DependancyInjection\bin\Debug\School.Models.dll.config
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\DependancyInjection\bin\Debug\Schoo.Dto.pdb
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\DependancyInjection\obj\Debug\DependancyInjection.csproj.CopyComplete
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\DependancyInjection\obj\Debug\DependancyInjection.dll
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\DependancyInjection\obj\Debug\DependancyInjection.pdb
+D:\Internship\SchoolApplication\DependancyInjection\bin\Debug\DependancyInjection.dll.config
+D:\Internship\SchoolApplication\DependancyInjection\bin\Debug\DependancyInjection.dll
+D:\Internship\SchoolApplication\DependancyInjection\bin\Debug\DependancyInjection.pdb
+D:\Internship\SchoolApplication\DependancyInjection\bin\Debug\EntityFramework.dll
+D:\Internship\SchoolApplication\DependancyInjection\bin\Debug\EntityFramework.SqlServer.dll
+D:\Internship\SchoolApplication\DependancyInjection\bin\Debug\IData.dll
+D:\Internship\SchoolApplication\DependancyInjection\bin\Debug\IRepository.dll
+D:\Internship\SchoolApplication\DependancyInjection\bin\Debug\Ninject.dll
+D:\Internship\SchoolApplication\DependancyInjection\bin\Debug\School.Data.dll
+D:\Internship\SchoolApplication\DependancyInjection\bin\Debug\School.Repository.dll
+D:\Internship\SchoolApplication\DependancyInjection\bin\Debug\School.Models.dll
+D:\Internship\SchoolApplication\DependancyInjection\bin\Debug\Schoo.Dto.dll
+D:\Internship\SchoolApplication\DependancyInjection\bin\Debug\IData.pdb
+D:\Internship\SchoolApplication\DependancyInjection\bin\Debug\IData.dll.config
+D:\Internship\SchoolApplication\DependancyInjection\bin\Debug\IRepository.pdb
+D:\Internship\SchoolApplication\DependancyInjection\bin\Debug\School.Data.pdb
+D:\Internship\SchoolApplication\DependancyInjection\bin\Debug\School.Data.dll.config
+D:\Internship\SchoolApplication\DependancyInjection\bin\Debug\School.Repository.pdb
+D:\Internship\SchoolApplication\DependancyInjection\bin\Debug\School.Repository.dll.config
+D:\Internship\SchoolApplication\DependancyInjection\bin\Debug\EntityFramework.xml
+D:\Internship\SchoolApplication\DependancyInjection\bin\Debug\EntityFramework.SqlServer.xml
+D:\Internship\SchoolApplication\DependancyInjection\bin\Debug\Ninject.xml
+D:\Internship\SchoolApplication\DependancyInjection\bin\Debug\School.Models.pdb
+D:\Internship\SchoolApplication\DependancyInjection\bin\Debug\School.Models.dll.config
+D:\Internship\SchoolApplication\DependancyInjection\bin\Debug\Schoo.Dto.pdb
+D:\Internship\SchoolApplication\DependancyInjection\obj\Debug\DependancyInjection.csprojAssemblyReference.cache
+D:\Internship\SchoolApplication\DependancyInjection\obj\Debug\DependancyInjection.csproj.CoreCompileInputs.cache
+D:\Internship\SchoolApplication\DependancyInjection\obj\Debug\DependancyInjection.csproj.CopyComplete
+D:\Internship\SchoolApplication\DependancyInjection\obj\Debug\DependancyInjection.dll
+D:\Internship\SchoolApplication\DependancyInjection\obj\Debug\DependancyInjection.pdb

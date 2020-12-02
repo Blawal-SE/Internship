@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Threading.Tasks;
+using DependancyInjection;
+using IRepository;
 using Microsoft.Owin;
 using Microsoft.Owin.Security.OAuth;
+using Ninject;
 using Owin;
 using Webpi.Test.OauthProvider;
 
@@ -11,15 +14,16 @@ using Webpi.Test.OauthProvider;
 namespace Webpi.Test.App_Start
 {
     public class Startup
-    {
+    {   // private StudentRepository _repo = new StudentRepository();
         public static OAuthAuthorizationServerOptions OAuthOptions { get; private set; }
-
         static Startup()
         {
+            var kernel = new StandardKernel(new NInjectBinding());
+            var Iuser = kernel.Get<IUser>();
             OAuthOptions = new OAuthAuthorizationServerOptions
             {
                 TokenEndpointPath = new PathString("/Login"),
-                Provider = new Provider(),
+                Provider = new Provider(Iuser),
                 AccessTokenExpireTimeSpan = TimeSpan.FromDays(2),
                 AllowInsecureHttp = true
             };

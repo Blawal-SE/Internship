@@ -1,6 +1,6 @@
-﻿using School.Models;
-using School.Repository;
-using School.Repository.View;
+﻿using IRepository;
+using School.Dto.View;
+using School.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,8 +13,12 @@ namespace Webpi.Test.Controllers
 {
     public class StudentController : BaseController
     {
-        private StudentRepository _repo = new StudentRepository();
-        [Authorize(Roles = "admin,superadmin")]
+        // private StudentRepository _repo = new StudentRepository();
+        private IStudent _repo;
+        public StudentController(IStudent Cont)
+        {
+            _repo = Cont;
+        }
         [HttpGet]
         public IHttpActionResult Get()
         {
@@ -27,7 +31,7 @@ namespace Webpi.Test.Controllers
         [HttpGet]
         public IHttpActionResult Get(int id)
         {
-            return Ok(_repo.FindStudent(id , USER_ID));
+            return Ok(_repo.FindStudent(id, USER_ID));
         }
         [Authorize(Roles = "admin,superadmin")]
         [HttpPost]
@@ -47,7 +51,7 @@ namespace Webpi.Test.Controllers
         [Authorize]
         public IHttpActionResult Delete(int id)
         {
-            _repo.Delete(id);
+            //  _repo.Delete(id);
             return Ok(true);
         }
 

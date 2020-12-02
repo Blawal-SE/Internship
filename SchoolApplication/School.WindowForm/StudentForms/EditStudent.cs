@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,6 +16,7 @@ namespace School.WindowForm.StudentForms
 {
     public partial class EditStudent : Form
     {
+        private string emptyImage = @"D:\Internship\SchoolApplication\School.WindowForm\Resources\emptyimage.jpg";
         private readonly IStudent _StudentRepo;
         private readonly ICourse _CourseRepo;
         private readonly StandardKernel Kernal;
@@ -31,6 +33,18 @@ namespace School.WindowForm.StudentForms
             StudentForm = Studentform;
 
             InitializeComponent();
+        }
+
+        public delegate void UpdateDelegate(object sender, UpdateEventArgs args);
+        public event UpdateDelegate UpdateEventHandler;
+        public class UpdateEventArgs : EventArgs
+        {
+            public String Data { get; set; }
+        }
+        protected void RefreshStudentGridView()
+        {
+            UpdateEventArgs args = new UpdateEventArgs();
+            UpdateEventHandler.Invoke(this, args);
         }
         private void BtnAddStudent_Click(object sender, EventArgs e)
         {
@@ -50,6 +64,14 @@ namespace School.WindowForm.StudentForms
             DtpStudetDob.Text = model.Dob;
             TxtEmail.Text = model.Email;
             TxtPassword.Text = model.Password;
+            if (model.ImageUrl != null)
+            {
+                pbStudent.Load(model.ImageUrl);
+            }
+            else
+            {
+                pbStudent.Load(emptyImage);
+            }
             TxtConfirmPassword.Text = model.ConfirmPassword;
             List<int> indexes = new List<int>();
             foreach (var item in listBox1.Items)
@@ -62,9 +84,12 @@ namespace School.WindowForm.StudentForms
                     }
                 }
             }
-            foreach (var index in indexes)
+            if (indexes != null)
             {
-                listBox1.SetItemChecked(index, true);
+                foreach (var index in indexes)
+                {
+                    listBox1.SetItemChecked(index, true);
+                }
             }
         }
 
@@ -85,8 +110,10 @@ namespace School.WindowForm.StudentForms
             model.ConfirmPassword = TxtConfirmPassword.Text;
             model.Dob = DtpStudetDob.Text.ToString();
             model.UserId = USER_ID;
+            model.ImageUrl = txtImageUrl.Text;
             _StudentRepo.UpdateStudent(model);
-            this.Hide();
+            RefreshStudentGridView();
+            this.Close();
         }
         private void BtnDelete_Click(object sender, EventArgs e)
         {
@@ -94,6 +121,29 @@ namespace School.WindowForm.StudentForms
             if (DialogResult.Yes == x)
             {
                 _StudentRepo.Delete(StudentId);
+                RefreshStudentGridView();
+                this.Close();
+            }
+        }
+
+        private void btnUploadImage_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                OpenFileDialog open = new OpenFileDialog();
+                open.Filter = "Image Files(*.jpeg;*.bmp;*.png;*.jpg)|*.jpeg;*.bmp;*.png;*.jpg";
+                if (open.ShowDialog() == DialogResult.OK)
+                {
+                    //  filename = Guid.NewGuid() + Path.GetExtension(open.FileName);
+                    pbStudent.Image = new Bitmap(open.FileName);
+                    var path = Path.Combine(open.FileName, @"D:\Internship\SchoolApplication\School.WindowForm\Content\Images\", Path.GetFileName(open.FileName));
+                    txtImageUrl.Text = path;
+                    File.Copy(open.FileName, path, true);
+                }
+            }
+            catch (Exception)
+            {
+                throw;
             }
         }
     }

@@ -1,0 +1,19 @@
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\Schoo.Dto\bin\Debug\Schoo.Dto.dll
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\Schoo.Dto\bin\Debug\Schoo.Dto.pdb
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\Schoo.Dto\bin\Debug\School.Models.dll
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\Schoo.Dto\bin\Debug\School.Models.pdb
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\Schoo.Dto\bin\Debug\School.Models.dll.config
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\Schoo.Dto\obj\Debug\Schoo.Dto.csprojAssemblyReference.cache
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\Schoo.Dto\obj\Debug\Schoo.Dto.csproj.CopyComplete
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\Schoo.Dto\obj\Debug\Schoo.Dto.dll
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\Schoo.Dto\obj\Debug\Schoo.Dto.pdb
+D:\Internship\SchoolApplication\Schoo.Dto\bin\Debug\Schoo.Dto.dll
+D:\Internship\SchoolApplication\Schoo.Dto\bin\Debug\Schoo.Dto.pdb
+D:\Internship\SchoolApplication\Schoo.Dto\bin\Debug\School.Models.dll
+D:\Internship\SchoolApplication\Schoo.Dto\bin\Debug\School.Models.pdb
+D:\Internship\SchoolApplication\Schoo.Dto\bin\Debug\School.Models.dll.config
+D:\Internship\SchoolApplication\Schoo.Dto\obj\Debug\Schoo.Dto.csprojAssemblyReference.cache
+D:\Internship\SchoolApplication\Schoo.Dto\obj\Debug\Schoo.Dto.csproj.CoreCompileInputs.cache
+D:\Internship\SchoolApplication\Schoo.Dto\obj\Debug\Schoo.Dto.csproj.CopyComplete
+D:\Internship\SchoolApplication\Schoo.Dto\obj\Debug\Schoo.Dto.dll
+D:\Internship\SchoolApplication\Schoo.Dto\obj\Debug\Schoo.Dto.pdb

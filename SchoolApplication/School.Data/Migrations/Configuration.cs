@@ -1,23 +1,32 @@
-﻿namespace School.Data.Migrations
+﻿using School.Models;
+using System;
+using System.Collections.Generic;
+using System.Data.Entity;
+using System.Data.Entity.Migrations;
+using System.Linq;
+namespace School.Data.Migrations
 {
-    using System;
-    using System.Data.Entity;
-    using System.Data.Entity.Migrations;
-    using System.Linq;
-
-    internal sealed class Configuration : DbMigrationsConfiguration<School.Data.Models.SchoolContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<School.Data.SchoolContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(School.Data.Models.SchoolContext context)
+        protected override void Seed(School.Data.SchoolContext context)
         {
-            //  This method will be called after migrating to the latest version.
+            if (!context.Courses.Any())
+            {
+                context.Courses.AddRange(new List<Course> {
+                new Course {Name="OOP"},
+                new Course {Name="C#"},
+                new Course {Name="Java"},
+                new Course {Name="WEB"},
+                new Course {Name="Asp.Net"},
 
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method
-            //  to avoid creating duplicate seed data.
+                });
+                context.SaveChanges();
+            }
         }
     }
 }

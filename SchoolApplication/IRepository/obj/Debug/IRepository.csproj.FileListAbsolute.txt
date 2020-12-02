@@ -1,0 +1,23 @@
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\IRepository\bin\Debug\IRepository.dll
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\IRepository\bin\Debug\IRepository.pdb
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\IRepository\bin\Debug\Schoo.Dto.dll
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\IRepository\bin\Debug\School.Models.dll
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\IRepository\bin\Debug\Schoo.Dto.pdb
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\IRepository\bin\Debug\School.Models.pdb
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\IRepository\bin\Debug\School.Models.dll.config
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\IRepository\obj\Debug\IRepository.csprojAssemblyReference.cache
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\IRepository\obj\Debug\IRepository.csproj.CopyComplete
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\IRepository\obj\Debug\IRepository.dll
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\IRepository\obj\Debug\IRepository.pdb
+D:\Internship\SchoolApplication\IRepository\bin\Debug\IRepository.dll
+D:\Internship\SchoolApplication\IRepository\bin\Debug\IRepository.pdb
+D:\Internship\SchoolApplication\IRepository\bin\Debug\Schoo.Dto.dll
+D:\Internship\SchoolApplication\IRepository\bin\Debug\School.Models.dll
+D:\Internship\SchoolApplication\IRepository\bin\Debug\Schoo.Dto.pdb
+D:\Internship\SchoolApplication\IRepository\bin\Debug\School.Models.pdb
+D:\Internship\SchoolApplication\IRepository\bin\Debug\School.Models.dll.config
+D:\Internship\SchoolApplication\IRepository\obj\Debug\IRepository.csprojAssemblyReference.cache
+D:\Internship\SchoolApplication\IRepository\obj\Debug\IRepository.csproj.CoreCompileInputs.cache
+D:\Internship\SchoolApplication\IRepository\obj\Debug\IRepository.csproj.CopyComplete
+D:\Internship\SchoolApplication\IRepository\obj\Debug\IRepository.dll
+D:\Internship\SchoolApplication\IRepository\obj\Debug\IRepository.pdb

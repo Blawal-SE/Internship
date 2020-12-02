@@ -15,7 +15,7 @@ namespace WepApi.DependancyInjection.Controllers
         {
             _repo = Cont;
         }
-        [Authorize(Roles = "admin,superadmin")]
+        [Authorize/*(Roles = "admin,superadmin")*/]
         [HttpGet]
         public IHttpActionResult GET()
         {
