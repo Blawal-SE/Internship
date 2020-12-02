@@ -1,7 +1,9 @@
-﻿using System;
+﻿using School.Dto.View;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -15,7 +17,7 @@ namespace WepApi.DependancyInjection.Controllers
     {
         //localhost/api/user/PostUserImage
         [Authorize]
-        [AllowAnonymous]
+
         public IHttpActionResult PostUserImage()
         {
             var httpRequest = HttpContext.Current.Request;
@@ -26,10 +28,12 @@ namespace WepApi.DependancyInjection.Controllers
                 var path = Path.Combine(HttpContext.Current.Server.MapPath("~/Content/Images/"), filename);
                 file.SaveAs(path);
                 var thumbPath = MakeThumbnail(320, 240, file.InputStream, Path.Combine(HttpContext.Current.Server.MapPath("~/Content/Images/Thumbnails"), filename));
+                var base64Image = Convert64Image(path);
                 var data = new
                 {
                     RealPath = string.Format("{0}", path),
                     ThumbPath = string.Format("{0}", thumbPath),
+                    Base64Image = base64Image,
                     Message = "Success"
 
                 };
@@ -41,6 +45,38 @@ namespace WepApi.DependancyInjection.Controllers
             };
             return Ok(FailRespoonse);
         }
+
+        [Authorize]
+        [Route("api/Upload/imageandroid")]
+        [AllowAnonymous]
+        public IHttpActionResult Post(StudentDtoPost obj)
+        {
+            byte[] bytes = Convert.FromBase64String(obj.ImageBase64);
+            Image image;
+            var path = "";
+            using (MemoryStream ms = new MemoryStream(bytes))
+            {
+                image = Image.FromStream(ms);
+                var fileName = Guid.NewGuid() + Path.GetExtension(".png");
+                path = Path.Combine(HttpContext.Current.Server.MapPath("~/Content/Images/"), fileName);
+                image.Save(path);
+            };
+            //}
+            //var subpath = "~/Images/";
+            //bool exist = System.IO.Directory.Exists(HttpContext.Current.Server.MapPath(subpath));
+            //if (!exist) Directory.CreateDirectory(HttpContext.Current.Server.MapPath(subpath));
+
+            // var base64Image = Convert64Image(path);
+            var data = new
+            {
+                RealPath = string.Format("{0}", path),
+                Message = "Success"
+
+            };
+            return Ok(data);
+
+        }
+
         public string MakeThumbnail(int Width, int Height, Stream streamImg, string saveFilePath)
         {
             Bitmap sourceImage = new Bitmap(streamImg);
@@ -61,7 +97,12 @@ namespace WepApi.DependancyInjection.Controllers
                 }
             }
         }
-
+        public string Convert64Image(string Path)
+        {
+            byte[] imageArray = System.IO.File.ReadAllBytes(Path);
+            string base64ImageRepresentation = Convert.ToBase64String(imageArray);
+            return base64ImageRepresentation;
+        }
     }
 }
 

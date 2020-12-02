@@ -51,21 +51,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Migrations\202009300557160_studentTableIsCreated.cs" />
-    <Compile Include="Migrations\202009300557160_studentTableIsCreated.designer.cs">
-      <DependentUpon>202009300557160_studentTableIsCreated.cs</DependentUpon>
+    <Compile Include="Migrations\202010150640029_databaseintitaitedwithRoles.cs" />
+    <Compile Include="Migrations\202010150640029_databaseintitaitedwithRoles.designer.cs">
+      <DependentUpon>202010150640029_databaseintitaitedwithRoles.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202009301017169_dobChangedToString.cs" />
-    <Compile Include="Migrations\202009301017169_dobChangedToString.designer.cs">
-      <DependentUpon>202009301017169_dobChangedToString.cs</DependentUpon>
+    <Compile Include="Migrations\202010201255435_StudentTableuserasforeighnkeyadded.cs" />
+    <Compile Include="Migrations\202010201255435_StudentTableuserasforeighnkeyadded.designer.cs">
+      <DependentUpon>202010201255435_StudentTableuserasforeighnkeyadded.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202010011041495_StudentTableemailcolumnaddedb.cs" />
-    <Compile Include="Migrations\202010011041495_StudentTableemailcolumnaddedb.designer.cs">
-      <DependentUpon>202010011041495_StudentTableemailcolumnaddedb.cs</DependentUpon>
+    <Compile Include="Migrations\202010281402245_StudentTableimageurlcolumnadded.cs" />
+    <Compile Include="Migrations\202010281402245_StudentTableimageurlcolumnadded.designer.cs">
+      <DependentUpon>202010281402245_StudentTableimageurlcolumnadded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011030606109_student_table_thumbnailurl_column_added.cs" />
+    <Compile Include="Migrations\202011030606109_student_table_thumbnailurl_column_added.designer.cs">
+      <DependentUpon>202011030606109_student_table_thumbnailurl_column_added.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\SchoolContext.cs" />
-    <Compile Include="Models\Student.cs" />
+    <Compile Include="SchoolContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -73,14 +76,27 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202009300557160_studentTableIsCreated.resx">
-      <DependentUpon>202009300557160_studentTableIsCreated.cs</DependentUpon>
+    <ProjectReference Include="..\IData\IData.csproj">
+      <Project>{0510011d-2fef-4299-b99b-c4be0ee2873d}</Project>
+      <Name>IData</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\School.Models\School.Models.csproj">
+      <Project>{03145471-54a5-40ac-8722-6f33eb68f026}</Project>
+      <Name>School.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202010150640029_databaseintitaitedwithRoles.resx">
+      <DependentUpon>202010150640029_databaseintitaitedwithRoles.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202009301017169_dobChangedToString.resx">
-      <DependentUpon>202009301017169_dobChangedToString.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202010201255435_StudentTableuserasforeighnkeyadded.resx">
+      <DependentUpon>202010201255435_StudentTableuserasforeighnkeyadded.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202010011041495_StudentTableemailcolumnaddedb.resx">
-      <DependentUpon>202010011041495_StudentTableemailcolumnaddedb.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202010281402245_StudentTableimageurlcolumnadded.resx">
+      <DependentUpon>202010281402245_StudentTableimageurlcolumnadded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011030606109_student_table_thumbnailurl_column_added.resx">
+      <DependentUpon>202011030606109_student_table_thumbnailurl_column_added.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -7,6 +7,7 @@ namespace School.Repository.View
 {
     public class Pager
     {
+        public int UserId { get; set; }
         public int draw { get; set; }
         public int start { get; set; }
         public int length { get; set; }

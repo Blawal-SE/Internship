@@ -1,0 +1,219 @@
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\WepApi.DependancyInjection\bin\WepApi.DependancyInjection.dll.config
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\WepApi.DependancyInjection\bin\WepApi.DependancyInjection.dll
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\WepApi.DependancyInjection\bin\WepApi.DependancyInjection.pdb
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\WepApi.DependancyInjection\bin\roslyn\csc.exe
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\WepApi.DependancyInjection\bin\roslyn\csc.exe.config
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\WepApi.DependancyInjection\bin\roslyn\csc.rsp
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\WepApi.DependancyInjection\bin\roslyn\csi.exe
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\WepApi.DependancyInjection\bin\roslyn\csi.rsp
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\WepApi.DependancyInjection\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\WepApi.DependancyInjection\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\WepApi.DependancyInjection\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\WepApi.DependancyInjection\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\WepApi.DependancyInjection\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\WepApi.DependancyInjection\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\WepApi.DependancyInjection\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\WepApi.DependancyInjection\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\WepApi.DependancyInjection\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\WepApi.DependancyInjection\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\WepApi.DependancyInjection\bin\roslyn\System.AppContext.dll
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\WepApi.DependancyInjection\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\WepApi.DependancyInjection\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\WepApi.DependancyInjection\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\WepApi.DependancyInjection\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\WepApi.DependancyInjection\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\WepApi.DependancyInjection\bin\roslyn\vbc.exe
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\WepApi.DependancyInjection\bin\roslyn\vbc.exe.config
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\WepApi.DependancyInjection\bin\roslyn\vbc.rsp
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\WepApi.DependancyInjection\bin\roslyn\VBCSCompiler.exe
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\WepApi.DependancyInjection\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\WepApi.DependancyInjection\bin\DependancyInjection.dll
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\WepApi.DependancyInjection\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\WepApi.DependancyInjection\bin\Newtonsoft.Json.dll
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\WepApi.DependancyInjection\bin\Ninject.dll
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\WepApi.DependancyInjection\bin\Ninject.Web.Common.dll
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\WepApi.DependancyInjection\bin\System.Net.Http.Formatting.dll
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\WepApi.DependancyInjection\bin\System.Web.Http.dll
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\WepApi.DependancyInjection\bin\System.Web.Http.WebHost.dll
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\WepApi.DependancyInjection\bin\IData.dll
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\WepApi.DependancyInjection\bin\School.Data.dll
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\WepApi.DependancyInjection\bin\IRepository.dll
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\WepApi.DependancyInjection\bin\School.Repository.dll
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\WepApi.DependancyInjection\bin\EntityFramework.dll
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\WepApi.DependancyInjection\bin\School.Models.dll
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\WepApi.DependancyInjection\bin\Schoo.Dto.dll
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\WepApi.DependancyInjection\bin\DependancyInjection.pdb
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\WepApi.DependancyInjection\bin\DependancyInjection.dll.config
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\WepApi.DependancyInjection\bin\Ninject.xml
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\WepApi.DependancyInjection\bin\Ninject.Web.Common.xml
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\WepApi.DependancyInjection\bin\Newtonsoft.Json.xml
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\WepApi.DependancyInjection\bin\System.Net.Http.Formatting.xml
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\WepApi.DependancyInjection\bin\System.Web.Http.xml
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\WepApi.DependancyInjection\bin\System.Web.Http.WebHost.xml
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\WepApi.DependancyInjection\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\WepApi.DependancyInjection\bin\IData.pdb
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\WepApi.DependancyInjection\bin\IData.dll.config
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\WepApi.DependancyInjection\bin\School.Data.pdb
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\WepApi.DependancyInjection\bin\School.Data.dll.config
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\WepApi.DependancyInjection\bin\IRepository.pdb
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\WepApi.DependancyInjection\bin\School.Repository.pdb
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\WepApi.DependancyInjection\bin\School.Repository.dll.config
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\WepApi.DependancyInjection\bin\EntityFramework.xml
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\WepApi.DependancyInjection\bin\School.Models.pdb
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\WepApi.DependancyInjection\bin\School.Models.dll.config
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\WepApi.DependancyInjection\bin\Schoo.Dto.pdb
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\WepApi.DependancyInjection\obj\Debug\WepApi.DependancyInjection.csprojAssemblyReference.cache
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\WepApi.DependancyInjection\obj\Debug\WepApi.DependancyInjection.csproj.CopyComplete
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\WepApi.DependancyInjection\obj\Debug\WepApi.DependancyInjection.dll
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\WepApi.DependancyInjection\obj\Debug\WepApi.DependancyInjection.pdb
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\WepApi.DependancyInjection\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\WepApi.DependancyInjection\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\WepApi.DependancyInjection\bin\Microsoft.Owin.Cors.dll
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\WepApi.DependancyInjection\bin\Microsoft.Owin.dll
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\WepApi.DependancyInjection\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\WepApi.DependancyInjection\bin\Microsoft.Owin.Security.dll
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\WepApi.DependancyInjection\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\WepApi.DependancyInjection\bin\Owin.dll
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\WepApi.DependancyInjection\bin\System.Web.Cors.dll
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\WepApi.DependancyInjection\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\WepApi.DependancyInjection\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\WepApi.DependancyInjection\bin\Microsoft.Owin.xml
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\WepApi.DependancyInjection\bin\Microsoft.Owin.Cors.xml
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\WepApi.DependancyInjection\bin\Microsoft.Owin.Security.xml
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\WepApi.DependancyInjection\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\WepApi.DependancyInjection\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\WepApi.DependancyInjection\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\WepApi.DependancyInjection\bin\System.Web.Http.Owin.dll
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\WepApi.DependancyInjection\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\WepApi.DependancyInjection\bin\System.Web.Http.Owin.xml
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\WepApi.DependancyInjection\bin\EntityFramework.SqlServer.dll
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\WepApi.DependancyInjection\bin\EntityFramework.SqlServer.xml
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\WepApi.DependancyInjection\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\WepApi.DependancyInjection\bin\System.Web.Helpers.dll
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\WepApi.DependancyInjection\bin\System.Web.Mvc.dll
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\WepApi.DependancyInjection\bin\System.Web.Razor.dll
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\WepApi.DependancyInjection\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\WepApi.DependancyInjection\bin\System.Web.WebPages.dll
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\WepApi.DependancyInjection\bin\System.Web.WebPages.Razor.dll
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\WepApi.DependancyInjection\bin\System.Web.Helpers.xml
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\WepApi.DependancyInjection\bin\System.Web.Mvc.xml
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\WepApi.DependancyInjection\bin\System.Web.Razor.xml
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\WepApi.DependancyInjection\bin\System.Web.WebPages.xml
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\WepApi.DependancyInjection\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\WepApi.DependancyInjection\bin\System.Web.WebPages.Razor.xml
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\WepApi.DependancyInjection\bin\Ninject.Web.Common.WebHost.dll
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\WepApi.DependancyInjection\bin\Ninject.Web.WebApi.dll
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\WepApi.DependancyInjection\bin\WebActivatorEx.dll
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\WepApi.DependancyInjection\bin\WebApiContrib.IoC.Ninject.dll
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\WepApi.DependancyInjection\bin\Ninject.Web.Common.WebHost.xml
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\WepApi.DependancyInjection\bin\Ninject.Web.WebApi.xml
+D:\Internship\SchoolApplication\WepApi.DependancyInjection\bin\WepApi.DependancyInjection.dll.config
+D:\Internship\SchoolApplication\WepApi.DependancyInjection\bin\WepApi.DependancyInjection.dll
+D:\Internship\SchoolApplication\WepApi.DependancyInjection\bin\WepApi.DependancyInjection.pdb
+D:\Internship\SchoolApplication\WepApi.DependancyInjection\bin\roslyn\csc.exe
+D:\Internship\SchoolApplication\WepApi.DependancyInjection\bin\roslyn\csc.exe.config
+D:\Internship\SchoolApplication\WepApi.DependancyInjection\bin\roslyn\csc.rsp
+D:\Internship\SchoolApplication\WepApi.DependancyInjection\bin\roslyn\csi.exe
+D:\Internship\SchoolApplication\WepApi.DependancyInjection\bin\roslyn\csi.rsp
+D:\Internship\SchoolApplication\WepApi.DependancyInjection\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Internship\SchoolApplication\WepApi.DependancyInjection\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Internship\SchoolApplication\WepApi.DependancyInjection\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\Internship\SchoolApplication\WepApi.DependancyInjection\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Internship\SchoolApplication\WepApi.DependancyInjection\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\Internship\SchoolApplication\WepApi.DependancyInjection\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Internship\SchoolApplication\WepApi.DependancyInjection\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Internship\SchoolApplication\WepApi.DependancyInjection\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\Internship\SchoolApplication\WepApi.DependancyInjection\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\Internship\SchoolApplication\WepApi.DependancyInjection\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Internship\SchoolApplication\WepApi.DependancyInjection\bin\roslyn\System.AppContext.dll
+D:\Internship\SchoolApplication\WepApi.DependancyInjection\bin\roslyn\System.Collections.Immutable.dll
+D:\Internship\SchoolApplication\WepApi.DependancyInjection\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\Internship\SchoolApplication\WepApi.DependancyInjection\bin\roslyn\System.IO.FileSystem.dll
+D:\Internship\SchoolApplication\WepApi.DependancyInjection\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\Internship\SchoolApplication\WepApi.DependancyInjection\bin\roslyn\System.Reflection.Metadata.dll
+D:\Internship\SchoolApplication\WepApi.DependancyInjection\bin\roslyn\vbc.exe
+D:\Internship\SchoolApplication\WepApi.DependancyInjection\bin\roslyn\vbc.exe.config
+D:\Internship\SchoolApplication\WepApi.DependancyInjection\bin\roslyn\vbc.rsp
+D:\Internship\SchoolApplication\WepApi.DependancyInjection\bin\roslyn\VBCSCompiler.exe
+D:\Internship\SchoolApplication\WepApi.DependancyInjection\bin\roslyn\VBCSCompiler.exe.config
+D:\Internship\SchoolApplication\WepApi.DependancyInjection\bin\DependancyInjection.dll
+D:\Internship\SchoolApplication\WepApi.DependancyInjection\bin\EntityFramework.dll
+D:\Internship\SchoolApplication\WepApi.DependancyInjection\bin\EntityFramework.SqlServer.dll
+D:\Internship\SchoolApplication\WepApi.DependancyInjection\bin\IRepository.dll
+D:\Internship\SchoolApplication\WepApi.DependancyInjection\bin\Microsoft.AspNet.Identity.Core.dll
+D:\Internship\SchoolApplication\WepApi.DependancyInjection\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\Internship\SchoolApplication\WepApi.DependancyInjection\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Internship\SchoolApplication\WepApi.DependancyInjection\bin\Microsoft.Owin.Cors.dll
+D:\Internship\SchoolApplication\WepApi.DependancyInjection\bin\Microsoft.Owin.dll
+D:\Internship\SchoolApplication\WepApi.DependancyInjection\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Internship\SchoolApplication\WepApi.DependancyInjection\bin\Microsoft.Owin.Security.Cookies.dll
+D:\Internship\SchoolApplication\WepApi.DependancyInjection\bin\Microsoft.Owin.Security.dll
+D:\Internship\SchoolApplication\WepApi.DependancyInjection\bin\Microsoft.Owin.Security.OAuth.dll
+D:\Internship\SchoolApplication\WepApi.DependancyInjection\bin\Microsoft.Web.Infrastructure.dll
+D:\Internship\SchoolApplication\WepApi.DependancyInjection\bin\Newtonsoft.Json.dll
+D:\Internship\SchoolApplication\WepApi.DependancyInjection\bin\Ninject.dll
+D:\Internship\SchoolApplication\WepApi.DependancyInjection\bin\Ninject.Web.Common.dll
+D:\Internship\SchoolApplication\WepApi.DependancyInjection\bin\Ninject.Web.Common.WebHost.dll
+D:\Internship\SchoolApplication\WepApi.DependancyInjection\bin\Ninject.Web.WebApi.dll
+D:\Internship\SchoolApplication\WepApi.DependancyInjection\bin\Owin.dll
+D:\Internship\SchoolApplication\WepApi.DependancyInjection\bin\Schoo.Dto.dll
+D:\Internship\SchoolApplication\WepApi.DependancyInjection\bin\School.Models.dll
+D:\Internship\SchoolApplication\WepApi.DependancyInjection\bin\System.Net.Http.Formatting.dll
+D:\Internship\SchoolApplication\WepApi.DependancyInjection\bin\System.Web.Cors.dll
+D:\Internship\SchoolApplication\WepApi.DependancyInjection\bin\System.Web.Helpers.dll
+D:\Internship\SchoolApplication\WepApi.DependancyInjection\bin\System.Web.Http.dll
+D:\Internship\SchoolApplication\WepApi.DependancyInjection\bin\System.Web.Http.Owin.dll
+D:\Internship\SchoolApplication\WepApi.DependancyInjection\bin\System.Web.Http.WebHost.dll
+D:\Internship\SchoolApplication\WepApi.DependancyInjection\bin\System.Web.Mvc.dll
+D:\Internship\SchoolApplication\WepApi.DependancyInjection\bin\System.Web.Razor.dll
+D:\Internship\SchoolApplication\WepApi.DependancyInjection\bin\System.Web.WebPages.Deployment.dll
+D:\Internship\SchoolApplication\WepApi.DependancyInjection\bin\System.Web.WebPages.dll
+D:\Internship\SchoolApplication\WepApi.DependancyInjection\bin\System.Web.WebPages.Razor.dll
+D:\Internship\SchoolApplication\WepApi.DependancyInjection\bin\WebActivatorEx.dll
+D:\Internship\SchoolApplication\WepApi.DependancyInjection\bin\WebApiContrib.IoC.Ninject.dll
+D:\Internship\SchoolApplication\WepApi.DependancyInjection\bin\IData.dll
+D:\Internship\SchoolApplication\WepApi.DependancyInjection\bin\School.Data.dll
+D:\Internship\SchoolApplication\WepApi.DependancyInjection\bin\School.Repository.dll
+D:\Internship\SchoolApplication\WepApi.DependancyInjection\bin\DependancyInjection.pdb
+D:\Internship\SchoolApplication\WepApi.DependancyInjection\bin\DependancyInjection.dll.config
+D:\Internship\SchoolApplication\WepApi.DependancyInjection\bin\IRepository.pdb
+D:\Internship\SchoolApplication\WepApi.DependancyInjection\bin\Schoo.Dto.pdb
+D:\Internship\SchoolApplication\WepApi.DependancyInjection\bin\School.Models.pdb
+D:\Internship\SchoolApplication\WepApi.DependancyInjection\bin\School.Models.dll.config
+D:\Internship\SchoolApplication\WepApi.DependancyInjection\bin\EntityFramework.xml
+D:\Internship\SchoolApplication\WepApi.DependancyInjection\bin\EntityFramework.SqlServer.xml
+D:\Internship\SchoolApplication\WepApi.DependancyInjection\bin\Microsoft.AspNet.Identity.Core.xml
+D:\Internship\SchoolApplication\WepApi.DependancyInjection\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\Internship\SchoolApplication\WepApi.DependancyInjection\bin\Microsoft.Owin.xml
+D:\Internship\SchoolApplication\WepApi.DependancyInjection\bin\Microsoft.Owin.Cors.xml
+D:\Internship\SchoolApplication\WepApi.DependancyInjection\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Internship\SchoolApplication\WepApi.DependancyInjection\bin\Microsoft.Owin.Security.xml
+D:\Internship\SchoolApplication\WepApi.DependancyInjection\bin\Microsoft.Owin.Security.Cookies.xml
+D:\Internship\SchoolApplication\WepApi.DependancyInjection\bin\Microsoft.Owin.Security.OAuth.xml
+D:\Internship\SchoolApplication\WepApi.DependancyInjection\bin\Ninject.xml
+D:\Internship\SchoolApplication\WepApi.DependancyInjection\bin\Ninject.Web.Common.xml
+D:\Internship\SchoolApplication\WepApi.DependancyInjection\bin\Ninject.Web.Common.WebHost.xml
+D:\Internship\SchoolApplication\WepApi.DependancyInjection\bin\Ninject.Web.WebApi.xml
+D:\Internship\SchoolApplication\WepApi.DependancyInjection\bin\System.Web.Helpers.xml
+D:\Internship\SchoolApplication\WepApi.DependancyInjection\bin\System.Web.Http.Owin.xml
+D:\Internship\SchoolApplication\WepApi.DependancyInjection\bin\System.Web.Mvc.xml
+D:\Internship\SchoolApplication\WepApi.DependancyInjection\bin\System.Web.Razor.xml
+D:\Internship\SchoolApplication\WepApi.DependancyInjection\bin\System.Web.WebPages.xml
+D:\Internship\SchoolApplication\WepApi.DependancyInjection\bin\System.Web.WebPages.Deployment.xml
+D:\Internship\SchoolApplication\WepApi.DependancyInjection\bin\System.Web.WebPages.Razor.xml
+D:\Internship\SchoolApplication\WepApi.DependancyInjection\bin\Newtonsoft.Json.xml
+D:\Internship\SchoolApplication\WepApi.DependancyInjection\bin\System.Net.Http.Formatting.xml
+D:\Internship\SchoolApplication\WepApi.DependancyInjection\bin\System.Web.Http.xml
+D:\Internship\SchoolApplication\WepApi.DependancyInjection\bin\System.Web.Http.WebHost.xml
+D:\Internship\SchoolApplication\WepApi.DependancyInjection\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Internship\SchoolApplication\WepApi.DependancyInjection\bin\IData.pdb
+D:\Internship\SchoolApplication\WepApi.DependancyInjection\bin\IData.dll.config
+D:\Internship\SchoolApplication\WepApi.DependancyInjection\bin\School.Data.pdb
+D:\Internship\SchoolApplication\WepApi.DependancyInjection\bin\School.Data.dll.config
+D:\Internship\SchoolApplication\WepApi.DependancyInjection\bin\School.Repository.pdb
+D:\Internship\SchoolApplication\WepApi.DependancyInjection\bin\School.Repository.dll.config
+D:\Internship\SchoolApplication\WepApi.DependancyInjection\obj\Debug\WepApi.DependancyInjection.csprojAssemblyReference.cache
+D:\Internship\SchoolApplication\WepApi.DependancyInjection\obj\Debug\WepApi.DependancyInjection.csproj.CoreCompileInputs.cache
+D:\Internship\SchoolApplication\WepApi.DependancyInjection\obj\Debug\WepApi.DependancyInjection.csproj.CopyComplete
+D:\Internship\SchoolApplication\WepApi.DependancyInjection\obj\Debug\WepApi.DependancyInjection.dll
+D:\Internship\SchoolApplication\WepApi.DependancyInjection\obj\Debug\WepApi.DependancyInjection.pdb

@@ -1,9 +1,10 @@
 ﻿using Newtonsoft.Json;
 
 using School.Data;
+using School.Dto.View;
 using School.Models;
 using School.Repository;
-using School.Repository.View;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,44 +17,47 @@ namespace School.WebApi.Controller
 {
     public class StudentController : ApiController
     {
-        private StudentRepository repo = new StudentRepository();
-        
-        
-            [HttpGet]
+        private StudentRepository _repo = new StudentRepository();
+
+        [HttpGet]
+        [Authorize]
         public IHttpActionResult Get()
-        { 
-            var students = repo.GetStudents();
-            return Ok(students);
+        {
+            Pager pager = new Pager();
+            pager.length = 100;
+            return Ok(_repo.GetStudents(pager));
         }
         [HttpGet]
         public IHttpActionResult Get(int id)
         {
-          
-            return Ok(repo.FindStudent(id));
+            return Ok(_repo.FindStudent(id));
+
         }
         [HttpPost]
-        public IHttpActionResult Post(string student)
+        public IHttpActionResult Post(AddEditStudentDto model)
         {
-            StudentDtoPost model = new StudentDtoPost();
-                model = JsonConvert.DeserializeObject<StudentDtoPost>(student);
-           var message= repo.AddStudent(model.student,model.courses);
-           
-            return Ok(message); 
+            return Ok(_repo.AddStudent(model));
+        }
+        [HttpPost]
+        public IHttpActionResult Post([FromBody]Student student)
+        {
+            return Ok(_repo.Add(student));
         }
         [HttpPut]
-        public IHttpActionResult Put([FromBody]Student student)
+        public IHttpActionResult Put(AddEditStudentDto model)
         {
-
-            repo.Update(student);
-
+            return Ok(_repo.UpdateStudent(model));
+        }
+        [HttpPut]
+        public IHttpActionResult Put(Student student)
+        {
+            _repo.Update(student);
             return Ok(true);
         }
         [HttpDelete]
         public IHttpActionResult Delete(int id)
         {
-
-            repo.Delete(id);
-
+            _repo.Delete(id);
             return Ok(true);
         }
 

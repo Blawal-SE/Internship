@@ -1,6 +1,7 @@
-﻿using Microsoft.Owin.Security;
+﻿
+using IRepository;
+using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.OAuth;
-using School.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +14,11 @@ namespace Webpi.Test.OauthProvider
 {
     public class Provider : OAuthAuthorizationServerProvider
     {
+        private IUser _repo;
+        public Provider(IUser Cont)
+        {
+            _repo = Cont;
+        }
 
         public override Task GrantResourceOwnerCredentials(OAuthGrantResourceOwnerCredentialsContext context)
         {
@@ -21,16 +27,16 @@ namespace Webpi.Test.OauthProvider
                 {
                     var username = context.UserName;
                     var password = context.Password;
-                    var userRepository = new UserRolesRepository();
-                    var user = userRepository.ValidateUser(username, password);
-                    // UserDTO user = UserDAL.ValidateUser(username, password);
-                    if (user != null)
+                    //  var userRepository = new UserRolesRepository(_context);
+                    // var user = _repo.ValidateUser(username, password);
+                    var user = _repo.ValidateUser(username, password);
+                    if (username != null)
                     {
                         var claims = new List<Claim>()
                           {
-                               new Claim(ClaimTypes.Sid,user.Id.ToString()),
-                               new Claim(ClaimTypes.Name, user.UserName),
-                               new Claim(ClaimTypes.Name, user.FullName)
+                               new Claim(ClaimTypes.Sid,"1"),
+                               new Claim(ClaimTypes.Name, "b761"),
+                               new Claim(ClaimTypes.NameIdentifier, "761")
                           };
                         foreach (var role in user.roles)
                         {

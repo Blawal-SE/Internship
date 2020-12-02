@@ -1,0 +1,14 @@
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\School.DataBaseLayer\bin\Debug\School.DataBaseLayer.dll.config
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\School.DataBaseLayer\bin\Debug\School.DataBaseLayer.dll
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\School.DataBaseLayer\bin\Debug\School.DataBaseLayer.pdb
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\School.DataBaseLayer\bin\Debug\EntityFramework.dll
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\School.DataBaseLayer\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\School.DataBaseLayer\bin\Debug\School.Models.dll
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\School.DataBaseLayer\bin\Debug\School.Models.pdb
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\School.DataBaseLayer\bin\Debug\School.Models.dll.config
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\School.DataBaseLayer\bin\Debug\EntityFramework.xml
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\School.DataBaseLayer\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\School.DataBaseLayer\obj\Debug\School.DataBaseLayer.csprojAssemblyReference.cache
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\School.DataBaseLayer\obj\Debug\School.DataBaseLayer.csproj.CopyComplete
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\School.DataBaseLayer\obj\Debug\School.DataBaseLayer.dll
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\School.DataBaseLayer\obj\Debug\School.DataBaseLayer.pdb

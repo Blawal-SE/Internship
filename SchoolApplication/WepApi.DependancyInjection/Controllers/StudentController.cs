@@ -20,8 +20,9 @@ namespace WepApi.DependancyInjection.Controllers
         //public StudentController()
         //{
         //}
-        [Authorize(Roles = "admin,superadmin")]
+        [Authorize/*(Roles = "admin,superadmin")*/]
         [HttpGet]
+
         public IHttpActionResult Get()
         {
             Pager pager = new Pager();
@@ -29,22 +30,31 @@ namespace WepApi.DependancyInjection.Controllers
             pager.UserId = USER_ID;
             return Ok(_repo.GetStudents(pager));
         }
-        [Authorize(Roles = "admin,superadmin")]
+        [Authorize/*(Roles = "admin,superadmin")*/]
         [HttpGet]
         public IHttpActionResult Get(int id)
         {
-            return Ok(_repo.FindStudent(id, USER_ID));
+            var model = _repo.FindStudent(id, USER_ID);
+            if (model != null)
+            {
+                model.ImageBase64 = model.ImageUrl != "" && model.ImageUrl != null ? Convert64Image(model.ImageUrl) : "";
+                return Ok(model);
+            }
+            else
+            {
+                return Ok(model);
+            }
         }
-        [Authorize(Roles = "admin,superadmin")]
+        [Authorize/*(Roles = "admin,superadmin")*/]
         [HttpPost]
-        public IHttpActionResult Post([FromBody]AddEditStudentDto Model)
+        public IHttpActionResult Post([FromBody] AddEditStudentDto Model)
         {
             Model.UserId = USER_ID;
             return Ok(_repo.AddStudent(Model));
         }
-        [Authorize(Roles = "admin,superadmin")]
+        [Authorize/*(Roles = "admin,superadmin")*/]
         [HttpPut]
-        public IHttpActionResult Put([FromBody]AddEditStudentDto Model)
+        public IHttpActionResult Put([FromBody] AddEditStudentDto Model)
         {
             Model.UserId = USER_ID;
             return Ok(_repo.UpdateStudent(Model));
@@ -56,6 +66,14 @@ namespace WepApi.DependancyInjection.Controllers
             _repo.Delete(id);
             return Ok(true);
         }
+        #region convert image to base64
+        public string Convert64Image(string Path)
+        {
+            byte[] imageArray = System.IO.File.ReadAllBytes(Path);
+            string base64ImageRepresentation = Convert.ToBase64String(imageArray);
+            return base64ImageRepresentation;
+        }
+        #endregion
 
     }
 

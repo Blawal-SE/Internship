@@ -1,4 +1,5 @@
-﻿using School.Data;
+﻿using IData;
+using IRepository;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -11,24 +12,20 @@ namespace School.Repository
 {
     public class BaseRepository<T> : IBaseRepository<T> where T : class
     {
-        private SchoolContext _context;
+        private readonly ISchoolContextt _context;
 
-        private IDbSet<T> _dbset;
-
-        public BaseRepository()
+        private readonly IDbSet<T> _dbset;
+        public BaseRepository(ISchoolContextt context)
         {
-            _context = new SchoolContext();
+            _context = context;
             _dbset = _context.Set<T>();
-
         }
-
         public bool Add(T obj)
         {
             try
             {
                 _dbset.Add(obj);
                 Save();
-                
             }
             catch (Exception e)
             {
@@ -38,14 +35,54 @@ namespace School.Repository
             return true;
         }
 
-      
-
-        public void Delete(int id)
+        public bool Delete(int id)
         {
-           T obj= _dbset.Find(id);
+            try
+            {
+                T obj = _dbset.Find(id);
+                _context.Set<T>().Remove(obj);
+                Save();
+                return true;
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }
+        }
+
+        public bool Delete(T obj)
+        {
             _dbset.Remove(obj);
             Save();
-
+            return true;
+        }
+        public bool AddRange(List<T> list)
+        {
+            foreach (var item in list)
+            {
+                _dbset.Add(item);
+            }
+            Save();
+            return true;
+        }
+        public bool DeleteRange(List<T> list)
+        {
+            foreach (var item in list)
+            {
+                _dbset.Remove(item);
+            }
+            Save();
+            return true;
+        }
+        public void Save()
+        {
+            _context.SaveChanges();
+        }
+        public void Update(T obj)
+        {
+            _context.Entry(obj).State = EntityState.Modified;
+            Save();
         }
 
         public List<T> GetAll()
@@ -53,20 +90,5 @@ namespace School.Repository
             return _dbset.ToList();
         }
 
-      
-        public void Save()
-        {
-            _context.SaveChanges();
-        }
-
-        public  void Update(T obj)
-        {
-           
-            _context.Entry(obj).State = EntityState.Modified;
-           
-            Save();
-        }
-       
-      
     }
 }

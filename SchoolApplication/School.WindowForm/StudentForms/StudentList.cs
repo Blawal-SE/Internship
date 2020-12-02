@@ -5,7 +5,9 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Odbc;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,6 +17,9 @@ namespace School.WindowForm.StudentForms
 {
     public partial class StudentList : Form
     {
+        // private string emptyimage = @"\";
+        // private string emptyimage = Path.Combine("download(2).jpg", @"D:\Internship\SchoolApplication\School.WindowForm\Resources\download(2).jpg", Path.GetFileName("download(2).jpg"));
+
         private readonly IStudent _StudentRepo;
         private readonly ICourse _CourseRepo;
         private readonly StandardKernel Kernal;
@@ -35,10 +40,14 @@ namespace School.WindowForm.StudentForms
             listBox1.DisplayMember = "Name";
             listBox1.ValueMember = "CourseId";
             listBox1.FormattingEnabled = true;
+            txtImageUrl.Text = "";
+            pbStudent.Image = Image.FromFile(@"D:\Internship\SchoolApplication\School.WindowForm\Resources\emptyimage.jpg");
+
         }
 
         private void BtnAddStudent_Click(object sender, EventArgs e)
         {
+
             var selectedcourse = listBox1.CheckedItems;
             var properties = selectedcourse.GetType().GetProperties();
             AddEditStudentDto model = new AddEditStudentDto();
@@ -47,6 +56,7 @@ namespace School.WindowForm.StudentForms
             {
                 model.Courses.Add(Convert.ToInt32(item.GetType().GetProperty("CourseId").GetValue(item, null)));
             }
+            model.ImageUrl = txtImageUrl.Text;
             model.Name = TxtName.Text;
             model.FName = TxtFName.Text;
             model.Email = TxtEmail.Text;
@@ -89,14 +99,11 @@ namespace School.WindowForm.StudentForms
                     DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
                     var studentid = Convert.ToInt32(row.Cells[0].Value);
                     EditStudent f = new EditStudent(Kernal, studentid, USER_ID, this);
-                    f.Show();
+                    f.UpdateEventHandler += f2_UpdateStudentGridHandler;
+                    f.ShowDialog();
                 }
-
-
             }
-
         }
-
 
         #region RefreshMethods of form data
         public void RefreshStudentTable()
@@ -106,7 +113,33 @@ namespace School.WindowForm.StudentForms
             pager.start = 0;
             pager.UserId = USER_ID;
             dataGridView1.AutoGenerateColumns = false;
-            dataGridView1.DataSource = _StudentRepo.GetStudents(pager);
+            var model = _StudentRepo.GetStudents(pager);
+            foreach (var item in model)
+            {
+                var StudentModel = (StudentDtoPost)(item);
+                if (StudentModel != null)
+                {
+                    var i = 0;
+                    foreach (var coursedto in StudentModel.StudentCourses)
+                    {
+                        if (i < StudentModel.StudentCourses.Count - 1)
+                        {
+                            StudentModel.CoursesStr += coursedto.Name + ",";
+                        }
+                        else
+                        {
+
+                            StudentModel.CoursesStr += coursedto.Name;
+                        }
+                        i++;
+                    }
+                }
+            }
+            dataGridView1.DataSource = model;
+        }
+        private void f2_UpdateStudentGridHandler(object sender, EditStudent.UpdateEventArgs args)
+        {
+            RefreshStudentTable();
 
         }
         public void RefreshStudentForm()
@@ -118,11 +151,39 @@ namespace School.WindowForm.StudentForms
             TxtPassword.Text = "";
             TxtConfirmPassword.Text = "";
             DtpStudetDob.Text = "";
+            List<int> index = new List<int>();
             foreach (var item in listBox1.Items)
             {
-                listBox1.SetItemChecked(listBox1.Items.IndexOf(item), false);
+                index.Add(Convert.ToInt32(listBox1.Items.IndexOf(item)));
+
+            }
+            foreach (var item in index)
+            {
+                listBox1.SetItemChecked(item, false);
             }
         }
         #endregion
+
+        private void btnUploadImage_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                OpenFileDialog open = new OpenFileDialog();
+                open.Filter = "Image Files(*.jpeg;*.bmp;*.png;*.jpg)|*.jpeg;*.bmp;*.png;*.jpg";
+                if (open.ShowDialog() == DialogResult.OK)
+                {
+                    //  filename = Guid.NewGuid() + Path.GetExtension(open.FileName);
+                    pbStudent.Image = new Bitmap(open.FileName);
+                    var path = Path.Combine(open.FileName, @"D:\Internship\SchoolApplication\School.WindowForm\Content\Images\", Path.GetFileName(open.FileName));
+                    txtImageUrl.Text = path;
+                    File.Copy(open.FileName, path, true);
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
     }
 }

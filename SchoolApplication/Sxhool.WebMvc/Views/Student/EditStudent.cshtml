@@ -1,17 +1,14 @@
 ﻿@model School.Repository.View.StudentDtoPost
 @{
     ViewBag.Title = "EditStudent";
-
+    var check = false;
 }
 
 <h2>EditStudent</h2>
-<input id="Button1" type="button" class="
-bs-glyphicon" value="button" />
 
-<input id="Text1" type="text" />
 
-<form>
-    <div class="row" id="parent" name="myForm">
+<form action="@Url.Action("EditStudent","Student")" onsubmit="return validate()">
+    <div class="row" id="parent" name="myForm" >
 
         <input id="id" type="hidden"  value="@Model.student.Id"    />
 
@@ -35,12 +32,12 @@ bs-glyphicon" value="button" />
 
                 <label><b>Email</b></label>
 
-                <input id="email" type="text" name="email" value="@Model.student.Email" class="form-control" />
+                <input id="email" type="text" name="Email" value="@Model.student.Email" class="form-control" />
                 <label id="emaillb"></label>
             </div>
             <div class="form-group">
                 <label><b>Date of Birth</b></label>
-                <input id="DOB" type="date"  name="DOB" value="@Model.student.Dob" class="form-control" />
+                <input id="DOB" type="date"  name="Dob" value="@Model.student.Dob" class="form-control" />
 
             </div>
         </div>
@@ -48,20 +45,23 @@ bs-glyphicon" value="button" />
             <div class="form-group">
 
                 <label><b>Course</b></label>
-                <select id="courseslct" class="form-control select22" multiple searchable="Search here..">
+                <select id="courseslct" class="form-control select22" name="Courses" multiple searchable="Search here..">
                     @foreach (var course in Model.AllCoursesList)
                     {
+
                         foreach (var stdcourse in Model.StudentCourses)
                         {
                             if (stdcourse.CourseId == course.CourseId)
                             {
-
                                 <option value="@course.CourseId" class="select2" selected=true>@course.Name</option>
+                                check = true;
                             }
-                          
                         }
-                        <option value="@course.CourseId" class="select2">@course.Name</option>
-
+                        if (!check)
+                        {
+                            <option value="@course.CourseId" class="select2">@course.Name</option>
+                        }
+                        check = false;
                     }
                 </select>
 
@@ -70,14 +70,14 @@ bs-glyphicon" value="button" />
             <div class="form-group">
 
                 <label><b>Phone</b></label>
-                <input id="phone" type="text" name="phone" value="@Model.student.Phone" class="form-control" />
+                <input id="phone" type="text" name="Phone" value="@Model.student.Phone" class="form-control" />
                 <label id="phonelb"></label>
             </div>
 
             <div class="form-group">
                 <label><b>Password</b></label>
 
-                <input id="Password" type="password" value="@Model.student.Password" class="form-control" />
+                <input id="Password" type="password" name="Password" value="@Model.student.Password" class="form-control" />
                 <label id="Passwordlb"></label>
 
             </div>
@@ -86,13 +86,13 @@ bs-glyphicon" value="button" />
 
                 <label><b>Confrim Password</b></label>
 
-                <input id="ConfrimPassword" type="password" value="@Model.student.ConfirmPassword" class="form-control" />
+                <input id="ConfrimPassword" type="password" name="ConfirmPassword" value="@Model.student.ConfirmPassword" class="form-control" />
                 <label id="ConfrimPasswordlb"></label>
 
             </div>
             <div class="form-group">
 
-                <button type="button" id="saveBtn" class="form-control btn btn-primary" value="Save"></button>
+                <button type="button" id="saveBtn" class="form-control btn btn-primary " >Save</button>
                 <a href="@Url.Action("Index","Student")" type="button" class="btn ">Back to List</a>
 
             </div>
@@ -105,29 +105,12 @@ bs-glyphicon" value="button" />
 <script>
     $(document).ready(function(){
         $('#courseslct').select2();
-        $('#saveBtn').click(function () {
-                  var student = editStudent();
-                  debugger;
-                  if (validateStudentForm(student,$('#parent')))
-                  {
-                  
-                      $.ajax({
-                          type: "Post",
-                          async: false,
-                          url: '@Url.Action("EditStudent","Student")',
-                          data: {
-                              student: JSON.stringify(student)
-                          },
-                          success: function (data) {
-                              if(data.success=true)
-                              window.location.href = '@Url.Action("Index","Student",new { message="Successfully Edited Student"})';
-                          },
-                          error: function () {
-                              alert("ajax failed");
-                          }
-                      });
-                  }
-        });
+        function validate() {
+            debugger;
+            var x = validateStudentForm(GetStudentToValidate(), $('#parent')) ? true : false;
+            return x;
+    }
+   
 
 });
 </script>

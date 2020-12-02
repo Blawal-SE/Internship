@@ -1,0 +1,29 @@
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\IData\bin\Debug\IData.dll.config
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\IData\bin\Debug\IData.dll
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\IData\bin\Debug\IData.pdb
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\IData\bin\Debug\EntityFramework.dll
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\IData\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\IData\bin\Debug\School.Models.dll
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\IData\bin\Debug\School.Models.pdb
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\IData\bin\Debug\School.Models.dll.config
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\IData\bin\Debug\EntityFramework.xml
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\IData\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\IData\obj\Debug\IData.csprojAssemblyReference.cache
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\IData\obj\Debug\IData.csproj.CopyComplete
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\IData\obj\Debug\IData.dll
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\IData\obj\Debug\IData.pdb
+D:\Internship\SchoolApplication\IData\bin\Debug\IData.dll.config
+D:\Internship\SchoolApplication\IData\bin\Debug\IData.dll
+D:\Internship\SchoolApplication\IData\bin\Debug\IData.pdb
+D:\Internship\SchoolApplication\IData\bin\Debug\EntityFramework.dll
+D:\Internship\SchoolApplication\IData\bin\Debug\EntityFramework.SqlServer.dll
+D:\Internship\SchoolApplication\IData\bin\Debug\School.Models.dll
+D:\Internship\SchoolApplication\IData\bin\Debug\School.Models.pdb
+D:\Internship\SchoolApplication\IData\bin\Debug\School.Models.dll.config
+D:\Internship\SchoolApplication\IData\bin\Debug\EntityFramework.xml
+D:\Internship\SchoolApplication\IData\bin\Debug\EntityFramework.SqlServer.xml
+D:\Internship\SchoolApplication\IData\obj\Debug\IData.csprojAssemblyReference.cache
+D:\Internship\SchoolApplication\IData\obj\Debug\IData.csproj.CoreCompileInputs.cache
+D:\Internship\SchoolApplication\IData\obj\Debug\IData.csproj.CopyComplete
+D:\Internship\SchoolApplication\IData\obj\Debug\IData.dll
+D:\Internship\SchoolApplication\IData\obj\Debug\IData.pdb

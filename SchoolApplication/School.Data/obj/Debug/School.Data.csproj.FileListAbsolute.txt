@@ -3,13 +3,41 @@ C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\School.Data
 C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\School.Data\bin\Debug\School.Data.pdb
 C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\School.Data\bin\Debug\EntityFramework.dll
 C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\School.Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\School.Data\bin\Debug\School.Models.dll
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\School.Data\bin\Debug\School.Models.pdb
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\School.Data\bin\Debug\School.Models.dll.config
 C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\School.Data\bin\Debug\EntityFramework.xml
 C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\School.Data\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\School.Data\obj\Debug\School.Data.Migrations.studentTableIsCreated.resources
-C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\School.Data\obj\Debug\School.Data.Migrations.dobChangedToString.resources
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\School.Data\obj\Debug\School.Data.csprojAssemblyReference.cache
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\School.Data\obj\Debug\School.Data.Migrations.databaseintitaitedwithRoles.resources
 C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\School.Data\obj\Debug\School.Data.csproj.GenerateResource.cache
 C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\School.Data\obj\Debug\School.Data.csproj.CopyComplete
 C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\School.Data\obj\Debug\School.Data.dll
 C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\School.Data\obj\Debug\School.Data.pdb
-C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\School.Data\obj\Debug\School.Data.csprojAssemblyReference.cache
-C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\School.Data\obj\Debug\School.Data.Migrations.StudentTableemailcolumnaddedb.resources
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\School.Data\obj\Debug\School.Data.Migrations.StudentTableuserasforeighnkeyadded.resources
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\School.Data\bin\Debug\IData.dll
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\School.Data\bin\Debug\IData.pdb
+C:\Users\Hamza Aslam\Desktop\Internship\InternShip\SchoolApplication\School.Data\bin\Debug\IData.dll.config
+D:\Internship\SchoolApplication\School.Data\bin\Debug\School.Data.dll.config
+D:\Internship\SchoolApplication\School.Data\bin\Debug\School.Data.dll
+D:\Internship\SchoolApplication\School.Data\bin\Debug\School.Data.pdb
+D:\Internship\SchoolApplication\School.Data\bin\Debug\EntityFramework.dll
+D:\Internship\SchoolApplication\School.Data\bin\Debug\EntityFramework.SqlServer.dll
+D:\Internship\SchoolApplication\School.Data\bin\Debug\IData.dll
+D:\Internship\SchoolApplication\School.Data\bin\Debug\School.Models.dll
+D:\Internship\SchoolApplication\School.Data\bin\Debug\IData.pdb
+D:\Internship\SchoolApplication\School.Data\bin\Debug\IData.dll.config
+D:\Internship\SchoolApplication\School.Data\bin\Debug\School.Models.pdb
+D:\Internship\SchoolApplication\School.Data\bin\Debug\School.Models.dll.config
+D:\Internship\SchoolApplication\School.Data\bin\Debug\EntityFramework.xml
+D:\Internship\SchoolApplication\School.Data\bin\Debug\EntityFramework.SqlServer.xml
+D:\Internship\SchoolApplication\School.Data\obj\Debug\School.Data.csprojAssemblyReference.cache
+D:\Internship\SchoolApplication\School.Data\obj\Debug\School.Data.Migrations.databaseintitaitedwithRoles.resources
+D:\Internship\SchoolApplication\School.Data\obj\Debug\School.Data.Migrations.StudentTableuserasforeighnkeyadded.resources
+D:\Internship\SchoolApplication\School.Data\obj\Debug\School.Data.Migrations.StudentTableimageurlcolumnadded.resources
+D:\Internship\SchoolApplication\School.Data\obj\Debug\School.Data.Migrations.student_table_thumbnailurl_column_added.resources
+D:\Internship\SchoolApplication\School.Data\obj\Debug\School.Data.csproj.GenerateResource.cache
+D:\Internship\SchoolApplication\School.Data\obj\Debug\School.Data.csproj.CoreCompileInputs.cache
+D:\Internship\SchoolApplication\School.Data\obj\Debug\School.Data.csproj.CopyComplete
+D:\Internship\SchoolApplication\School.Data\obj\Debug\School.Data.dll
+D:\Internship\SchoolApplication\School.Data\obj\Debug\School.Data.pdb
